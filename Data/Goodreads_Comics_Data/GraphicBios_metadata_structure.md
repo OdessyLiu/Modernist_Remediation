@@ -9,40 +9,55 @@ This document provides a comprehensive overview of the database structure used f
 
 ## 2. Tables/sheets description
 
-### 2.1 ID_SHEET
-
-- **Description:** Stores the unique IDs of the books;
-- **Fields:** 
-    - **id:** Unique identifier of each book, within the dataset;
-    - **isbn:** Unique identifier of each book, universal; International Standard Book Numbers;
-    - **goodreads_id** Unique identifier of each book, within Goodreads;
-
-
-### 2.2 BOOK_SHEET
+### 2.1 BOOK_SHEET
 
 - **Description:** Stores basic information about the books;
 - **Fields:**
-  - **id:** Unique identifier of each book, within the dataset;
+  - **book_id:** Unique identifier of each book, within the dataset;
+  - **isbn:** Unique identifier of each book, universal; International Standard Book Numbers;
+  - **goodreads_id** Unique identifier of each book, within Goodreads;
   - **title_primary:** The primary title of each book, in English;
   - **title_secondary:** The seconary title (subtitle) of each book, in English (*na* if none);
   - **language:** The language of the original version of each book, in ISO language code; 
   - **publication_date:** The year that the book was published;
   - **publisher:** The publisher of the book;
   - **contributor_number:** The number of contributors of the book, on Goodreads;
-  - **author01:** The primary author of the book, showed as the first on Goodreads;  
-  - ... (other contributors -- authors, illustrators, performers, drawings, translators, etc.; final columns depend on books;)
+  - **contributors:** The contributors of the book, as shown on Goodreads; stored in *list* format, i.e., ["Author 1", "Author 2", "Author 3"]; the first item in the list is considered as the primary author/contributor of the book;
 
-### 2.3 SUBJECT_SHEET
+### 2.2 SUBJECT_SHEET
 
-- **Description:** Stores
+- **Description:** Stores information about graphic biography subject, within the dataset; the subjects include single figures, as well as groups (i.e., bands);
+- **Fields:**
+  - **figure_id:** The unique identifier of the graphic biography subject;
+  - **figure_name:** The name of the graphic biography subject;
+  - **figure_gender:** The gender of the graphic biography subject (*mixed* if a group);
+  - **figure_career:** In which career or field that the graphic biography subject is known for, saved in *list* format, i.e., ["professor", "political activist"];
+  - **figure_birth:** The year of birth of the graphic biography subject (*na* if not traceable or applicable);
+  - **figure_death:** The year of death of the graphic biography subject (*na* if not traceable or applicable);
+  - **figure_active_start:** The year from which the graphic biography subject became active in their field (i.e., first book publication, first song/movie release, etc.);
+  - **figure_active_end:** The year in which the graphic biography subject ended activities in their field (*na* if not traceable or applicable);
 
-### 2.4 BOOK_SUBJECT_RELATION_SHEET
+### 2.3 SUBJECT_PERIOD_SHEET
+
+- **Description:** Stores the one-to-many relationship of graphic biography subject(s) with their active period;
+- **Fields:**
+  - **figure_id:** The unique identifier of the graphic biography subject;
+  - **figure_active_period:** The active periods of a graphic biography subject;
+
+
+### 2.4 BOOK_SUBJECT_SHEET
+
+- **Description:** Stores the many-to-many relationship between BOOK_SHEET and SUBJECT_SHEET;
+- **Fields:**
+  - **book_id:** The unique identifier of each book, within the dataset;
+  - **figure_id:** The unique identifier of the graphic biography subject;
 
 ### 2.5 TRANSLATION_SHEET
+
 - **Description:** Stores information about translated books;
 - **Fields:** 
-  - **id:** Unique identifier of each book, within the dataset;
-  - **is_from_translation:** a binary categorization *(0 -- not from translation, 1 -- is from translation)*, indicating if the book was translated from different language;
+  - **book_id:** Unique identifier of each book, within the dataset;
+  - **is_from_translation:** Binary indicators of if the book was translated from different language, *0* if is not from translation, *1* if is from translation;
   - **isbn_original:** The ISBN of the original version of each book;
   - **goodreads_id_original:** The unique Goodreads ID of the original version of each book;
   - **title_original:** The title, both primary and secondary (subtitle), of each book, in its original language (*na* if not from translation);
@@ -52,4 +67,23 @@ This document provides a comprehensive overview of the database structure used f
 
 ## 3. Data relationships
 
+- **BOOK and SUBJECT:** many-to-many relationship;
+- **SUBJECT and subject active PERIOD:** one-to-many relationship, one subject with multiple active periods;
+
 ## 4. Guideline for datamanagement 
+
+### 4.1 Data updates
+
+All updates to the data should be made directly in the respective Excel sheets. Ensure consistency across related fields, such as *book_id* and *subject_id*. Make sure the old version is committed to Github before updating the dataset.
+
+### 4.2 Queries and analysis
+
+For complex queries and data analysis, it is recommended to use *Python* with the *pandas* library. This allows for efficient data manipulation and integration across different data sources.
+
+### 4.3 Version control
+
+The dataset is saved on Github repository [Modernist_Remediation_ReMedia](https://github.com/OdessyLiu/Modernist_Remediation_ReMedia) (currently a private repository) for version control purpose. 
+
+Path: Data/Goodreads_Comics_Data/Masterdata_ongoing.xlsx
+
+The dataset should be committed to Github before each update. 
