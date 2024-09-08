@@ -4,8 +4,10 @@
 
 This document provides a comprehensive overview of the database structure used for managing Goodreads_Reviews_Masterdata (the metadata of graphic biographies collected for analyses). The data is organized across multiple Excel sheets, each storing different entities and their relationships.
 
-- **Entities:** book;
-- **Attributes:** ID, website, ISBN, contributor(s), ...
+- **Entity:** book;
+  - **Attributes:** ID, website, ISBN, contributor(s), ...
+- **Entity:** figure;
+  - **Attributes:** ID, name, gender, career, ...
 
 ## 2. Tables/sheets description
 
@@ -18,13 +20,12 @@ This document provides a comprehensive overview of the database structure used f
   - **goodreads_id** Unique identifier of each book, within Goodreads;
   - **title_primary:** The primary title of each book, in English;
   - **title_secondary:** The seconary title (subtitle) of each book, in English (*na* if none);
-  - **language:** The language of the original version of each book, in ISO language code; 
   - **publication_date:** The year that the book was published;
   - **publisher:** The publisher of the book;
   - **contributor_number:** The number of contributors of the book, on Goodreads;
   - **contributors:** The contributors of the book, as shown on Goodreads; stored in *list* format, i.e., ["Author 1", "Author 2", "Author 3"]; the first item in the list is considered as the primary author/contributor of the book;
 
-### 2.2 SUBJECT_SHEET
+### 2.2 FIGURE_SHEET
 
 - **Description:** Stores information about graphic biography subject, within the dataset; the subjects include single figures, as well as groups (i.e., bands);
 - **Fields:**
@@ -37,7 +38,7 @@ This document provides a comprehensive overview of the database structure used f
   - **figure_active_start:** The year from which the graphic biography subject became active in their field (i.e., first book publication, first song/movie release, etc.);
   - **figure_active_end:** The year in which the graphic biography subject ended activities in their field (*na* if not traceable or applicable);
 
-### 2.3 SUBJECT_PERIOD_SHEET
+### 2.3 FIGURE_PERIOD_SHEET
 
 - **Description:** Stores the one-to-many relationship of graphic biography subject(s) with their active period;
 - **Fields:**
@@ -45,9 +46,9 @@ This document provides a comprehensive overview of the database structure used f
   - **figure_active_period:** The active periods of a graphic biography subject;
 
 
-### 2.4 BOOK_SUBJECT_SHEET
+### 2.4 BOOK_FIGURE_SHEET
 
-- **Description:** Stores the many-to-many relationship between BOOK_SHEET and SUBJECT_SHEET;
+- **Description:** Stores the many-to-many relationship between BOOK_SHEET and FIGURE_SHEET;
 - **Fields:**
   - **book_id:** The unique identifier of each book, within the dataset;
   - **figure_id:** The unique identifier of the graphic biography subject;
