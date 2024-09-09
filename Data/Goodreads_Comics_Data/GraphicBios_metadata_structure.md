@@ -18,8 +18,8 @@ This document provides a comprehensive overview of the database structure used f
   - **book_id:** Unique identifier of each book, within the dataset;
   - **isbn:** Unique identifier of each book, universal; International Standard Book Numbers;
   - **goodreads_id** Unique identifier of each book, within Goodreads;
-  - **title_primary:** The primary title of each book, in English;
-  - **title_secondary:** The seconary title (subtitle) of each book, in English (*na* if none);
+  - **title:** The primary title of each book, in English;
+  - **subtitle:** The subtitle of each book, in English (*na* if none);
   - **publication_date:** The year that the book was published;
   - **publisher:** The publisher of the book;
   - **contributor_number:** The number of contributors of the book, on Goodreads;
@@ -61,7 +61,7 @@ This document provides a comprehensive overview of the database structure used f
   - **is_from_translation:** Binary indicators of if the book was translated from different language, *0* if is not from translation, *1* if is from translation;
   - **isbn_original:** The ISBN of the original version of each book;
   - **goodreads_id_original:** The unique Goodreads ID of the original version of each book;
-  - **title_original:** The title, both primary and secondary (subtitle), of each book, in its original language (*na* if not from translation);
+  - **title_original:** The title, both title and subtitle, of each book, in its original language (*na* if not from translation);
   - **language_original:** The language of the original version of each book, in ISO language code; 
   - **publication_date_original:** The year that the original book was published;
   - **publisher_original:** The publisher of the book's original version;
@@ -88,3 +88,5 @@ The dataset is saved on Github repository [Modernist_Remediation_ReMedia](https:
 Path: Data/Goodreads_Comics_Data/Masterdata_ongoing.xlsx
 
 The dataset should be committed to Github before each update. 
+
+Changes to the project files will be updated to Teams weekly (by the end of every Sunday).
