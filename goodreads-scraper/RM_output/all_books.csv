@@ -1,0 +1,2 @@
+book_id_title    ,book_id  ,book_title              ,book_series ,isbn13 ,original_title           ,year_first_published ,author                              ,num_ratings ,num_reviews ,average_rating
+27132988-thoreau ,27132988 ,Thoreau: A Sublime Life ,            ,"""To" ,Original title not found ,                     ,"A. Dan, Maximilien Le Roy, A. Dan" ,        602 ,         79 ,          3.52
