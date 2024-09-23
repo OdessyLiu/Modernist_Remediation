@@ -119,7 +119,7 @@ def get_all_reviews(url):
     return reviews
 
 # 保存到 CSV 文件
-def save_reviews_to_csv(reviews, filename="RM_output/27132988-thoreau_reviews.csv"):
+def save_reviews_to_csv(reviews, filename="RM_output/41219524-the-rolling-stones-in-comics_reviews.csv"):
     df = pd.DataFrame(reviews)
     df.to_csv(filename, index=False)
     print(f"Reviews saved to {filename}")
@@ -127,7 +127,7 @@ def save_reviews_to_csv(reviews, filename="RM_output/27132988-thoreau_reviews.cs
 # 测试主函数
 def main():
     # 使用某本书的 Goodreads 评论页面作为测试
-    url = 'https://www.goodreads.com/book/show/27132988-thoreau'
+    url = 'https://www.goodreads.com/book/show/41219524-the-rolling-stones-in-comics'
     all_reviews = get_all_reviews(url)
     save_reviews_to_csv(all_reviews)
 
