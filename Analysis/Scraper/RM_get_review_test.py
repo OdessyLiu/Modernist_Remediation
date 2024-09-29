@@ -9,12 +9,14 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from bs4 import BeautifulSoup
 
-# 修改后的函数
 def get_rating(node):
+    # Finding the RatingStars element that contants aria-label attribute
     rating_element = node.find('span', {'class': 'RatingStars'})
-    if rating_element:
-        stars_filled = rating_element.find_all('path', {'class': 'RatingStar__fill'})
-        return len(stars_filled)  # 返回星星的数量，代表评分
+    if rating_element and 'aria-label' in rating_element.attrs:
+        # Retrieving the ratings from aria-label, i.e., "Rating 3 out of 5"
+        rating_text = rating_element['aria-label']
+        rating = rating_text.split()[1]  # Extracting the rating value
+        return rating
     return ''
 
 def get_user_name(node):
@@ -57,31 +59,33 @@ def get_shelves(node):
             shelves.append(shelf.text.strip())
     return shelves
 
-# 设置并初始化 WebDriver
+# Set up and initialize WebDriver
 def init_driver():
     service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service)
     return driver
 
-# 抓取页面并解析
+# Scrape page and parse HTML
 def fetch_goodreads_reviews(url):
     driver = init_driver()
     driver.get(url)
     
-    time.sleep(3)  # 等待页面加载
+    time.sleep(3)  # wait for the page to load
     html = driver.page_source
 
     soup = BeautifulSoup(html, 'html.parser')
     return soup, driver
 
-# 翻页功能，点击 "Show more reviews" 按钮加载更多评论
+# Click 'Show more reviews' button
 def click_show_more_reviews(driver):
     try:
-        # 显式等待按钮出现并可点击
-        wait = WebDriverWait(driver, 10)
+        # Use WebDriverWait to wait for the 'Show more reviews' button to become clickable
+        wait = WebDriverWait(driver, 20)
         show_more_button = wait.until(EC.element_to_be_clickable((By.XPATH, '//span[@data-testid="loadMore"]/ancestor::button')))
-        show_more_button.click()
-        time.sleep(3)  # 等待评论加载
+        
+        # Use JavaScript to click the button
+        driver.execute_script("arguments[0].click();", show_more_button)
+        time.sleep(3)  # wait for the page to load
         return True
     except TimeoutException:
         print("Timed out waiting for 'Show more reviews' button to become clickable.")
@@ -90,7 +94,8 @@ def click_show_more_reviews(driver):
         print(f"Error clicking 'Show more reviews': {e}")
         return False
 
-# 获取所有评论
+
+# Retrieve all reviews from a Goodreads review URL
 def get_all_reviews(url):
     soup, driver = fetch_goodreads_reviews(url)
     reviews = []
@@ -110,16 +115,16 @@ def get_all_reviews(url):
             reviews.append(review_data)
 
         if not click_show_more_reviews(driver):
-            break  # 没有更多评论可显示，停止
+            break  # no more reviews to show, stop scraping
 
-        # 更新 soup
+        # update soup
         soup = BeautifulSoup(driver.page_source, 'html.parser')
 
     driver.quit()
     return reviews
 
-# 保存到 CSV 文件
-def save_reviews_to_csv(reviews, filename="RM_output/41219524-the-rolling-stones-in-comics_reviews.csv"):
+# Save to CSV
+def save_reviews_to_csv(reviews, filename="Analysis/Scraper/RM_output/27132988-thoreau_reviews.csv"):
     df = pd.DataFrame(reviews)
     df.to_csv(filename, index=False)
     print(f"Reviews saved to {filename}")
@@ -127,7 +132,7 @@ def save_reviews_to_csv(reviews, filename="RM_output/41219524-the-rolling-stones
 # 测试主函数
 def main():
     # 使用某本书的 Goodreads 评论页面作为测试
-    url = 'https://www.goodreads.com/book/show/41219524-the-rolling-stones-in-comics'
+    url = 'https://www.goodreads.com/book/show/27132988-thoreau/reviews'
     all_reviews = get_all_reviews(url)
     save_reviews_to_csv(all_reviews)
 
