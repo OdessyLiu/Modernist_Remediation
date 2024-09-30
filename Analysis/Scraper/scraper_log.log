@@ -1,0 +1,7 @@
+2024-09-30 00:25:06,950 - INFO - Scraping reviews for book with Goodreads ID: 203641849-pink-floyd-in-comics
+2024-09-30 00:25:06,950 - INFO - ====== WebDriver manager ======
+2024-09-30 00:25:07,108 - INFO - Get LATEST chromedriver version for google-chrome
+2024-09-30 00:25:07,386 - INFO - Get LATEST chromedriver version for google-chrome
+2024-09-30 00:25:07,475 - INFO - Driver [/Users/odessialiu/.wdm/drivers/chromedriver/mac64/129.0.6668.70/chromedriver-mac-arm64/chromedriver] found in cache
+2024-09-30 00:25:14,467 - INFO - No 'Show more reviews' button found, all reviews are loaded.
+2024-09-30 00:25:14,559 - INFO - No reviews found for book with Goodreads ID: 203641849-pink-floyd-in-comics
