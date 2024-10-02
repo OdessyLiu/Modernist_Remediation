@@ -81,16 +81,25 @@ def init_driver(user_agent):
     driver = webdriver.Chrome(service=service)
     return driver
 
-# Scrape page and parse HTML
-def fetch_goodreads_reviews(url, user_agent):
-    driver = init_driver(user_agent)
-    driver.get(url)
-    
-    time.sleep(3)  # wait for the page to load
-    html = driver.page_source
-
-    soup = BeautifulSoup(html, 'html.parser')
-    return soup, driver
+# Scrape page and parse HTML with retries
+def fetch_goodreads_reviews(url, user_agent, retries=3):
+    for attempt in range(retries):
+        try:
+            driver = init_driver(user_agent)
+            driver.get(url)
+            
+            time.sleep(3)
+            
+            html = driver.page_source
+            soup = BeautifulSoup(html, 'html.parser')
+            
+            return soup, driver
+        except Exception as e:
+            logging.error(f"Error fetching page: {e}. Retrying... {attempt + 1}/{retries}")
+            time.sleep(random.uniform(10, 20))  # retry after random delay
+        
+    logging.error(f"Failed to fetch page after {retries} attempts.")
+    return None, None  # return none if failed to fetch page
 
 # Click 'Show more reviews' button
 def click_show_more_reviews(driver):
@@ -119,6 +128,11 @@ def click_show_more_reviews(driver):
 # Retrieve all reviews from a Goodreads review URL
 def get_all_reviews(url, user_agent):
     soup, driver = fetch_goodreads_reviews(url, user_agent)
+
+    if soup is None:
+        logging.error(f"Failed to retrieve reviews for {url}")
+        return []
+    
     reviews = []
 
     while True:
@@ -164,22 +178,29 @@ def save_reviews_to_csv(reviews, goodreads_id, base_path):
     df.to_csv(filename, index=False)
     logging.info(f"Reviews saved to {filename}")
 
+def get_random_user_agent(user_agents):
+    return random.choice(user_agents)
+
 # Main function
 def main():
-    user_agent  = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+    user_agents = [
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.3",
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.3"]
+    user_agent  = get_random_user_agent(user_agents)
     base_path = "Data/Reviews_Scraped/Raw"
     metadata_file_path = "Data/Goodreads_Comics_Data/Data_Files/Masterdata_ongoing.xlsx"
     goodreads_ids = read_goodreads_ids(metadata_file_path)
     
-    for goodreads_id in goodreads_ids[7:8]:
+    for goodreads_id in goodreads_ids[18:100]:
         logging.info(f"Scraping reviews for book with Goodreads ID: {goodreads_id}")
         url = generate_goodreads_review_url(goodreads_id)
         all_reviews = get_all_reviews(url, user_agent)
         if len(all_reviews) == 0:
             logging.info(f"No reviews found for book with Goodreads ID: {goodreads_id}")
-            return
+            continue
         save_reviews_to_csv(all_reviews, goodreads_id, base_path)
-        time.sleep(random.uniform(5, 10))
+        time.sleep(random.uniform(10, 20))
 
 if __name__ == "__main__":
     main()

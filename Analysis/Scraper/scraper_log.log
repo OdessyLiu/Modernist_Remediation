@@ -1,7 +1,61 @@
-2024-09-30 00:25:06,950 - INFO - Scraping reviews for book with Goodreads ID: 203641849-pink-floyd-in-comics
-2024-09-30 00:25:06,950 - INFO - ====== WebDriver manager ======
-2024-09-30 00:25:07,108 - INFO - Get LATEST chromedriver version for google-chrome
-2024-09-30 00:25:07,386 - INFO - Get LATEST chromedriver version for google-chrome
-2024-09-30 00:25:07,475 - INFO - Driver [/Users/odessialiu/.wdm/drivers/chromedriver/mac64/129.0.6668.70/chromedriver-mac-arm64/chromedriver] found in cache
-2024-09-30 00:25:14,467 - INFO - No 'Show more reviews' button found, all reviews are loaded.
-2024-09-30 00:25:14,559 - INFO - No reviews found for book with Goodreads ID: 203641849-pink-floyd-in-comics
+2024-10-02 01:41:01,286 - INFO - Scraping reviews for book with Goodreads ID: 59485970-david-bowie-in-comics
+2024-10-02 01:41:01,286 - INFO - ====== WebDriver manager ======
+2024-10-02 01:41:01,434 - INFO - Get LATEST chromedriver version for google-chrome
+2024-10-02 01:41:01,510 - INFO - Get LATEST chromedriver version for google-chrome
+2024-10-02 01:41:01,564 - INFO - Driver [/Users/odessialiu/.wdm/drivers/chromedriver/mac64/129.0.6668.89/chromedriver-mac-arm64/chromedriver] found in cache
+2024-10-02 01:41:08,364 - INFO - No 'Show more reviews' button found, all reviews are loaded.
+2024-10-02 01:41:08,467 - INFO - Reviews saved to Data/Reviews_Scraped/Raw/59485970-david-bowie-in-comics_reviews.csv
+2024-10-02 01:41:25,059 - INFO - Scraping reviews for book with Goodreads ID: 44661259-bob-marley-in-comics
+2024-10-02 01:41:25,060 - INFO - ====== WebDriver manager ======
+2024-10-02 01:41:25,204 - INFO - Get LATEST chromedriver version for google-chrome
+2024-10-02 01:41:25,269 - INFO - Get LATEST chromedriver version for google-chrome
+2024-10-02 01:41:25,323 - INFO - Driver [/Users/odessialiu/.wdm/drivers/chromedriver/mac64/129.0.6668.89/chromedriver-mac-arm64/chromedriver] found in cache
+2024-10-02 01:41:31,465 - INFO - No 'Show more reviews' button found, all reviews are loaded.
+2024-10-02 01:41:31,598 - INFO - Reviews saved to Data/Reviews_Scraped/Raw/44661259-bob-marley-in-comics_reviews.csv
+2024-10-02 01:41:47,223 - INFO - Scraping reviews for book with Goodreads ID: 32713508-billie-holiday
+2024-10-02 01:41:47,224 - INFO - ====== WebDriver manager ======
+2024-10-02 01:41:47,359 - INFO - Get LATEST chromedriver version for google-chrome
+2024-10-02 01:41:47,429 - INFO - Get LATEST chromedriver version for google-chrome
+2024-10-02 01:41:47,492 - INFO - Driver [/Users/odessialiu/.wdm/drivers/chromedriver/mac64/129.0.6668.89/chromedriver-mac-arm64/chromedriver] found in cache
+2024-10-02 01:42:04,268 - INFO - No 'Show more reviews' button found, all reviews are loaded.
+2024-10-02 01:42:04,487 - INFO - Reviews saved to Data/Reviews_Scraped/Raw/32713508-billie-holiday_reviews.csv
+2024-10-02 01:42:21,429 - INFO - Scraping reviews for book with Goodreads ID: 58320999-alfred-hitchcock
+2024-10-02 01:42:21,431 - INFO - ====== WebDriver manager ======
+2024-10-02 01:42:21,573 - INFO - Get LATEST chromedriver version for google-chrome
+2024-10-02 01:42:21,655 - INFO - Get LATEST chromedriver version for google-chrome
+2024-10-02 01:42:21,724 - INFO - Driver [/Users/odessialiu/.wdm/drivers/chromedriver/mac64/129.0.6668.89/chromedriver-mac-arm64/chromedriver] found in cache
+2024-10-02 01:42:29,970 - INFO - No 'Show more reviews' button found, all reviews are loaded.
+2024-10-02 01:42:30,057 - INFO - No reviews found for book with Goodreads ID: 58320999-alfred-hitchcock
+2024-10-02 01:42:30,057 - INFO - Scraping reviews for book with Goodreads ID: 58480576-django-hand-on-fire
+2024-10-02 01:42:30,058 - INFO - ====== WebDriver manager ======
+2024-10-02 01:42:30,177 - INFO - Get LATEST chromedriver version for google-chrome
+2024-10-02 01:42:30,240 - INFO - Get LATEST chromedriver version for google-chrome
+2024-10-02 01:42:30,297 - INFO - Driver [/Users/odessialiu/.wdm/drivers/chromedriver/mac64/129.0.6668.89/chromedriver-mac-arm64/chromedriver] found in cache
+2024-10-02 01:42:39,536 - INFO - No 'Show more reviews' button found, all reviews are loaded.
+2024-10-02 01:42:39,723 - INFO - Reviews saved to Data/Reviews_Scraped/Raw/58480576-django-hand-on-fire_reviews.csv
+2024-10-02 01:42:55,812 - INFO - Scraping reviews for book with Goodreads ID: 45180609-rodin
+2024-10-02 01:42:55,813 - INFO - ====== WebDriver manager ======
+2024-10-02 01:42:55,951 - INFO - Get LATEST chromedriver version for google-chrome
+2024-10-02 01:42:56,023 - INFO - Get LATEST chromedriver version for google-chrome
+2024-10-02 01:42:56,088 - INFO - Driver [/Users/odessialiu/.wdm/drivers/chromedriver/mac64/129.0.6668.89/chromedriver-mac-arm64/chromedriver] found in cache
+2024-10-02 01:43:01,900 - INFO - No 'Show more reviews' button found, all reviews are loaded.
+2024-10-02 01:43:02,138 - INFO - Reviews saved to Data/Reviews_Scraped/Raw/45180609-rodin_reviews.csv
+2024-10-02 01:43:16,870 - INFO - Scraping reviews for book with Goodreads ID: 54852191-love-me-please
+2024-10-02 01:43:16,870 - INFO - ====== WebDriver manager ======
+2024-10-02 01:43:17,010 - INFO - Get LATEST chromedriver version for google-chrome
+2024-10-02 01:43:17,090 - INFO - Get LATEST chromedriver version for google-chrome
+2024-10-02 01:43:17,160 - INFO - Driver [/Users/odessialiu/.wdm/drivers/chromedriver/mac64/129.0.6668.89/chromedriver-mac-arm64/chromedriver] found in cache
+2024-10-02 01:43:26,390 - INFO - No 'Show more reviews' button found, all reviews are loaded.
+2024-10-02 01:43:26,549 - INFO - Reviews saved to Data/Reviews_Scraped/Raw/54852191-love-me-please_reviews.csv
+2024-10-02 01:43:46,119 - INFO - Scraping reviews for book with Goodreads ID: 58321000-rosa-parks
+2024-10-02 01:43:46,120 - INFO - ====== WebDriver manager ======
+2024-10-02 01:43:46,258 - INFO - Get LATEST chromedriver version for google-chrome
+2024-10-02 01:43:46,317 - INFO - Get LATEST chromedriver version for google-chrome
+2024-10-02 01:43:46,381 - INFO - Driver [/Users/odessialiu/.wdm/drivers/chromedriver/mac64/129.0.6668.89/chromedriver-mac-arm64/chromedriver] found in cache
+2024-10-02 01:43:56,452 - INFO - No 'Show more reviews' button found, all reviews are loaded.
+2024-10-02 01:43:56,639 - INFO - Reviews saved to Data/Reviews_Scraped/Raw/58321000-rosa-parks_reviews.csv
+2024-10-02 01:44:10,689 - INFO - Scraping reviews for book with Goodreads ID: 34734476-monet
+2024-10-02 01:44:10,690 - INFO - ====== WebDriver manager ======
+2024-10-02 01:44:10,828 - INFO - Get LATEST chromedriver version for google-chrome
+2024-10-02 01:44:10,901 - INFO - Get LATEST chromedriver version for google-chrome
+2024-10-02 01:44:10,956 - INFO - Driver [/Users/odessialiu/.wdm/drivers/chromedriver/mac64/129.0.6668.89/chromedriver-mac-arm64/chromedriver] found in cache
