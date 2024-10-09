@@ -15,7 +15,7 @@ import logging
 
 # Set up logging
 logging.basicConfig(
-    filename='Analysis/Scraper/scraper_log2.log',
+    filename='Analysis/Scraper/scraper_log3.log',
     filemode='w',
     format='%(asctime)s - %(levelname)s - %(message)s',
     level=logging.INFO
@@ -197,7 +197,7 @@ def main():
 
     driver = init_driver(get_random_user_agent(user_agents))
 
-    for i, goodreads_id in enumerate(goodreads_ids[130:], start=130):
+    for i, goodreads_id in enumerate(goodreads_ids[127:128], start=127):
         logging.info(f"Scraping reviews for book with Goodreads ID: {goodreads_id}")
         url = generate_goodreads_review_url(goodreads_id)
         get_all_reviews(url, goodreads_id, driver, base_path)
