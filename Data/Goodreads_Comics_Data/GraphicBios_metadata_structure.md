@@ -66,6 +66,13 @@ This document provides a comprehensive overview of the database structure used f
   - **publication_date_original:** The year that the original book was published;
   - **publisher_original:** The publisher of the book's original version;
 
+### 2.6 BOOK_REVIEW_SHEET
+
+- **Description:** Stores information about the scraped review number of each book;
+- **Fields:** 
+  - **book_id:** Unique identifier of each book, within the dataset;
+  - **scraped_review_num:** The number of the scraped reviews;
+
 ## 3. Data relationships
 
 - **BOOK and SUBJECT:** many-to-many relationship;
@@ -83,7 +90,7 @@ For complex queries and data analysis, it is recommended to use *Python* with th
 
 ### 4.3 Version control
 
-The dataset is saved on Github repository [Modernist_Remediation_ReMedia](https://github.com/OdessyLiu/Modernist_Remediation_ReMedia) (currently a private repository) for version control purpose. 
+The dataset is saved on Github repository [Modernist_Remediation_ReMedia](https://github.com/OdessyLiu/Modernist_Remediation) 
 
 Path: Data/Goodreads_Comics_Data/Masterdata_ongoing.xlsx
 
