@@ -1,0 +1,235 @@
+2024-10-12 16:33:02,557 - INFO - ====== WebDriver manager ======
+2024-10-12 16:33:04,070 - INFO - Get LATEST chromedriver version for google-chrome
+2024-10-12 16:33:04,117 - INFO - Get LATEST chromedriver version for google-chrome
+2024-10-12 16:33:04,141 - INFO - Driver [C:\Users\qilinliu\.wdm\drivers\chromedriver\win64\129.0.6668.100\chromedriver-win32/chromedriver.exe] found in cache
+2024-10-12 16:33:05,192 - INFO - Scraping reviews for book with Goodreads ID: 17346698-march
+2024-10-12 16:33:11,013 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:33:14,282 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:33:17,637 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:33:21,159 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:33:24,903 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:33:28,660 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:33:32,522 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:33:36,465 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:33:40,519 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:33:44,714 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:33:49,013 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:33:53,423 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:33:58,165 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:34:02,780 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:34:07,746 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:34:12,694 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:34:17,724 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:34:23,330 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:34:28,751 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:34:34,291 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:34:40,239 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:34:47,031 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:34:52,939 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:34:59,048 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:35:05,333 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:35:11,722 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:35:18,308 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:35:25,060 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:35:33,002 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:35:40,616 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:35:48,108 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:35:55,798 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:36:03,414 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:36:12,466 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:36:21,046 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:36:29,543 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:36:38,402 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:36:47,572 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:36:57,166 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:37:07,078 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:37:17,161 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:37:27,489 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:37:37,588 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:37:48,603 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:38:00,137 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:38:11,396 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:38:23,098 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:38:35,074 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:38:48,261 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:39:01,716 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:39:15,455 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:39:28,664 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:39:42,421 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:39:56,740 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:40:12,295 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:40:29,086 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:40:44,410 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:41:00,265 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:41:15,772 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:41:32,154 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:41:51,227 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:42:09,269 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:42:26,487 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:42:44,678 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:43:02,557 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:43:21,720 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:43:41,167 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:44:00,243 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:44:20,093 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:44:41,225 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:45:01,446 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:45:23,130 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:45:44,688 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:46:04,795 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:46:26,340 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:46:47,647 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:47:10,378 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:47:32,923 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:47:55,269 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:48:18,215 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:48:41,572 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:49:06,694 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:49:29,933 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:49:52,592 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:50:16,858 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:50:43,087 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:51:07,896 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:51:34,451 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:52:01,862 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:52:27,818 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:52:53,443 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:53:21,661 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:53:49,903 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:54:18,071 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:54:46,793 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:55:15,812 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:55:44,784 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:56:14,078 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:56:45,909 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:57:17,929 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:57:49,184 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:58:22,197 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:58:54,180 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:59:26,173 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 16:59:58,125 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:00:31,681 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:01:05,767 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:01:38,188 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:02:12,506 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:02:47,668 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:03:20,913 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:03:55,623 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:04:31,084 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:05:06,107 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:05:41,858 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:06:18,815 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:06:53,577 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:07:32,289 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:08:12,548 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:08:51,867 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:09:30,854 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:10:11,969 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:10:53,988 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:11:38,360 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:12:21,496 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:13:04,613 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:13:48,975 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:14:33,937 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:15:18,677 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:16:04,188 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:16:49,740 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:17:37,052 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:18:24,160 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:19:11,255 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:19:58,826 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:20:47,530 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:21:35,930 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:22:25,451 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:23:13,363 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:24:03,733 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:24:57,223 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:25:44,227 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:26:34,915 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:27:25,481 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:28:14,735 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:29:04,544 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:29:54,852 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:30:46,363 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:31:37,212 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:32:29,517 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:33:21,903 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:34:15,427 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:35:10,397 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:36:05,414 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:37:00,170 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:37:58,551 - INFO - Saved 29 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:38:56,385 - INFO - Saved 29 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:39:58,017 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:40:58,430 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:41:59,524 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:42:59,455 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:44:00,403 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:45:02,644 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:46:05,263 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:47:08,425 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:48:11,629 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:49:15,814 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:50:21,466 - INFO - Saved 30 reviews for book ID: 17346698-march to Data/Reviews_Scraped/Raw/17346698-march_reviews.csv
+2024-10-12 17:50:23,841 - INFO - Error clicking 'Show more reviews': Message: target frame detached: received Inspector.detached event
+  (Session info: chrome=129.0.6668.101)
+Stacktrace:
+	GetHandleVerifier [0x008D5523+24195]
+	(No symbol) [0x0086AA04]
+	(No symbol) [0x00762093]
+	(No symbol) [0x0074F52E]
+	(No symbol) [0x0074E727]
+	(No symbol) [0x0074E08C]
+	(No symbol) [0x0074DFB8]
+	(No symbol) [0x0074C408]
+	(No symbol) [0x0074CABD]
+	(No symbol) [0x00758C8A]
+	(No symbol) [0x0076D215]
+	(No symbol) [0x00771816]
+	(No symbol) [0x0074D0EC]
+	(No symbol) [0x0076CE41]
+	(No symbol) [0x007E519F]
+	(No symbol) [0x007CA8D6]
+	(No symbol) [0x0079BA27]
+	(No symbol) [0x0079C43D]
+	GetHandleVerifier [0x00B9CE13+2938739]
+	GetHandleVerifier [0x00BEEC69+3274185]
+	GetHandleVerifier [0x009609C2+594722]
+	GetHandleVerifier [0x00967EDC+624700]
+	(No symbol) [0x008737CD]
+	(No symbol) [0x00870528]
+	(No symbol) [0x008706C5]
+	(No symbol) [0x00862CA6]
+	BaseThreadInitThunk [0x76C17BA9+25]
+	DummyExport [0x6DE101F2+55394]
+	DummyExport [0x6DE4C5C9+302137]
+	RtlInitializeExceptionChain [0x77BEC11B+107]
+	RtlClearBits [0x77BEC09F+191]
+
+2024-10-12 17:50:43,112 - INFO - Driver session closed.
+
+
+PS C:\Users\qilinliu\Desktop\Modernist_Remediation_ReMedia> & C:/Users/qilinliu/AppData/Local/anaconda3/envs/oditty/python.exe c:/Users/qilinliu/Desktop/Modernist_Remediation_ReMedia/Analysis/Scraper/RM_get_review_Win.py
+scraper started.
+
+DevTools listening on ws://127.0.0.1:9222/devtools/browser/54ef98fd-7e24-4c3e-87db-13f01b9c6598
+[10524:22980:1012/163305.182:ERROR:gpu_channel_manager.cc(952)] Failed to create GLES3 context, fallback to GLES2.
+[10524:22980:1012/163305.182:ERROR:gpu_channel_manager.cc(963)] ContextResult::kFatalFailure: Failed to create shared context for virtualization.
+[22752:15772:1012/163311.838:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+Created TensorFlow Lite XNNPACK delegate for CPU.
+Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#58 is a dynamic-sized tensor).
+[22752:15772:1012/163340.814:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+[22752:15772:1012/163435.802:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+[22752:15772:1012/163624.285:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+[22752:15772:1012/163933.846:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+[22752:15772:1012/164512.156:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+
+<--- Last few GCs --->
+
+[22116:0000328C001D4000]  4625270 ms: Scavenge 1284.2 (1543.0) -> 1279.0 (1543.0) MB, pooled: 0 MB, 6.90 / 0.00 ms  (average mu = 0.928, current mu = 0.975) allocation failure;
+[22116:0000328C001D4000]  4629507 ms: Scavenge 1284.1 (1543.7) -> 1279.8 (1543.7) MB, pooled: 0 MB, 6.19 / 0.00 ms  (average mu = 0.928, current mu = 0.975) task;
+
+
+<--- JS stacktrace --->
+
+[22116:12772:1012/175019.640:ERROR:v8_initializer.cc(806)] V8 process OOM (Oilpan: Large allocation. Ran out of reservation).
