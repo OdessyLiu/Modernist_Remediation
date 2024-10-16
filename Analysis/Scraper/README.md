@@ -34,3 +34,12 @@ You can install the required packages using pip. To install all dependencies at 
 
 ```bash
 pip install -r requirements.txt
+```
+
+### File Description
+
+**RM_get_review.py**: The first scraper ran on a personal laptop (MacBook Air M1). 
+
+**RM_get_review_win.py**: An updated scraper ran on lab computer (Windows machine).
+
+**RM_get_review_win_sort.py**: An updated scraper with filter and sort review order function (understesting, unfinished).

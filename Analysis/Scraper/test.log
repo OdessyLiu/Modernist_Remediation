@@ -1,0 +1,65 @@
+2024-10-15 19:34:34,088 - INFO - ====== WebDriver manager ======
+2024-10-15 19:34:35,392 - INFO - Get LATEST chromedriver version for google-chrome
+2024-10-15 19:34:35,424 - INFO - Get LATEST chromedriver version for google-chrome
+2024-10-15 19:34:35,466 - INFO - Driver [C:\Users\qilinliu\.wdm\drivers\chromedriver\win64\129.0.6668.100\chromedriver-win32/chromedriver.exe] found in cache
+2024-10-15 19:34:36,756 - INFO - Scraping reviews for book with Goodreads ID: 27132988-thoreau
+2024-10-15 19:34:40,216 - INFO - Clicked the Filters button.
+2024-10-15 19:34:46,279 - INFO - Clicked the 'Newest first' radio button.
+2024-10-15 19:34:52,374 - INFO - Clicked the 'Apply' button.
+2024-10-15 19:35:17,868 - ERROR - Reviews were not sorted as expected: Message: 
+Stacktrace:
+	GetHandleVerifier [0x004B5523+24195]
+	(No symbol) [0x0044AA04]
+	(No symbol) [0x00342093]
+	(No symbol) [0x00386ED2]
+	(No symbol) [0x0038711B]
+	(No symbol) [0x003C76F2]
+	(No symbol) [0x003AAB84]
+	(No symbol) [0x003C5280]
+	(No symbol) [0x003AA8D6]
+	(No symbol) [0x0037BA27]
+	(No symbol) [0x0037C43D]
+	GetHandleVerifier [0x0077CE13+2938739]
+	GetHandleVerifier [0x007CEC69+3274185]
+	GetHandleVerifier [0x005409C2+594722]
+	GetHandleVerifier [0x00547EDC+624700]
+	(No symbol) [0x004537CD]
+	(No symbol) [0x00450528]
+	(No symbol) [0x004506C5]
+	(No symbol) [0x00442CA6]
+	BaseThreadInitThunk [0x76C17BA9+25]
+	DummyExport [0x6DE101F2+55394]
+	DummyExport [0x6DE4C5C9+302137]
+	RtlInitializeExceptionChain [0x77BEC11B+107]
+	RtlClearBits [0x77BEC09F+191]
+
+2024-10-15 19:35:17,884 - ERROR - Error while verifying sorting: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id="NEWEST" and @checked]"}
+  (Session info: chrome=129.0.6668.101)
+Stacktrace:
+	GetHandleVerifier [0x004B5523+24195]
+	(No symbol) [0x0044AA04]
+	(No symbol) [0x00342093]
+	(No symbol) [0x00386ED2]
+	(No symbol) [0x0038711B]
+	(No symbol) [0x003C76F2]
+	(No symbol) [0x003AAB84]
+	(No symbol) [0x003C5280]
+	(No symbol) [0x003AA8D6]
+	(No symbol) [0x0037BA27]
+	(No symbol) [0x0037C43D]
+	GetHandleVerifier [0x0077CE13+2938739]
+	GetHandleVerifier [0x007CEC69+3274185]
+	GetHandleVerifier [0x005409C2+594722]
+	GetHandleVerifier [0x00547EDC+624700]
+	(No symbol) [0x004537CD]
+	(No symbol) [0x00450528]
+	(No symbol) [0x004506C5]
+	(No symbol) [0x00442CA6]
+	BaseThreadInitThunk [0x76C17BA9+25]
+	DummyExport [0x6DE101F2+55394]
+	DummyExport [0x6DE4C5C9+302137]
+	RtlInitializeExceptionChain [0x77BEC11B+107]
+	RtlClearBits [0x77BEC09F+191]
+
+2024-10-15 19:35:17,884 - ERROR - Sorting did not apply, skipping review scraping for this book.
+2024-10-15 19:35:34,343 - INFO - Driver session closed.

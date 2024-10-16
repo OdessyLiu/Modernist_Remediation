@@ -1,7 +1,5 @@
 Data/Web-Scraped_Data/
 Data/Reviews_Scraped/
-Analysis/Scraper/scraper_log.log
-Analysis/Scraper/scraper_log2.log
-Analysis/Scraper/scraper_log3.log
+Analysis/Scraper/log/*
 Notes/
 chrome_user_data/

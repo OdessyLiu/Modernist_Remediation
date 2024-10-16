@@ -8,7 +8,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException
+from selenium.common.exceptions import TimeoutException, NoSuchElementException, ElementClickInterceptedException
 from bs4 import BeautifulSoup
 import random
 import logging
@@ -16,7 +16,7 @@ import tempfile
 
 # Set up logging
 logging.basicConfig(
-    filename='Analysis/Scraper/52211831-they-called-us-enemy.log',
+    filename='Analysis/Scraper/test.log',
     filemode='w',
     format='%(asctime)s - %(levelname)s - %(message)s',
     level=logging.INFO
@@ -94,7 +94,73 @@ def init_driver(user_agent):
     driver = webdriver.Chrome(service=service, options=chrome_options)
     return driver
 
+def wait_for_reviews_to_update(driver):
+    try:
+        # Wait for the reviews to be sorted by checking the timestamp of the first review
+        WebDriverWait(driver, 20).until(
+            EC.presence_of_element_located((By.XPATH, '//time[contains(@datetime, "2024")]'))  # Adjust the time based on expected sorting
+        )
+        logging.info("Reviews are now sorted by Newest first.")
+    except Exception as e:
+        logging.error(f"Reviews were not sorted as expected: {e}")
 
+def apply_review_filters(driver):
+    try:
+        # Wait for the Filters button to become clickable and scroll to make it visible
+        filters_button = WebDriverWait(driver, 20).until(
+            EC.element_to_be_clickable((By.XPATH, '//span[text()="Filters"]/ancestor::button'))
+        )
+        
+        # Scroll the page to bring the button into view
+        driver.execute_script("arguments[0].scrollIntoView(true);", filters_button)
+        time.sleep(1)  # Adding a slight pause to ensure the scroll completes
+
+        # Click using JavaScript to avoid element interception issues
+        driver.execute_script("arguments[0].click();", filters_button)
+        logging.info("Clicked the Filters button.")
+        time.sleep(5)
+        
+        # Wait for the "Newest first" radio button to become clickable and scroll to it
+        newest_radio_button = WebDriverWait(driver, 20).until(
+            EC.element_to_be_clickable((By.XPATH, '//label[@for="NEWEST"]'))
+        )
+        driver.execute_script("arguments[0].scrollIntoView(true);", newest_radio_button)
+        time.sleep(1)  # Ensure the radio button is fully in view
+        driver.execute_script("arguments[0].click();", newest_radio_button)
+        logging.info("Clicked the 'Newest first' radio button.")
+        time.sleep(5)
+
+        # Wait for the "Apply" button to be clickable and scroll to it
+        apply_button = WebDriverWait(driver, 20).until(
+            EC.element_to_be_clickable((By.XPATH, '//span[text()="Apply"]/ancestor::button'))
+        )
+        driver.execute_script("arguments[0].scrollIntoView(true);", apply_button)
+        time.sleep(1)  # Ensure the apply button is in view
+        driver.execute_script("arguments[0].click();", apply_button)
+        logging.info("Clicked the 'Apply' button.")
+        time.sleep(5)
+        
+        driver.execute_script("arguments[0].scrollIntoView(true);", filters_button)
+
+        # Wait for the reviews to be sorted
+        wait_for_reviews_to_update(driver)
+    
+    except Exception as e:
+        logging.error(f"An unexpected error occurred: {e}")
+
+def verify_sorting_applied(driver):
+    try:
+        # Check if the "Newest first" option is still selected
+        newest_radio_button_checked = driver.find_element(By.XPATH, '//input[@id="NEWEST" and @checked]')
+        if newest_radio_button_checked:
+            logging.info("Newest first filter is correctly applied.")
+            return True
+        else:
+            logging.warning("Newest first filter was not applied correctly.")
+            return False
+    except Exception as e:
+        logging.error(f"Error while verifying sorting: {e}")
+        return False
 
 # Scrape page and parse HTML with retries
 def fetch_goodreads_reviews(url, driver, retries=3):
@@ -216,10 +282,20 @@ def main():
     driver = init_driver(get_random_user_agent(user_agents))
 
     try:
-        for i, goodreads_id in enumerate(goodreads_ids[126:127], start=126):
+        for i, goodreads_id in enumerate(goodreads_ids[0:1], start=0):
             logging.info(f"Scraping reviews for book with Goodreads ID: {goodreads_id}")
             url = generate_goodreads_review_url(goodreads_id)
-            get_all_reviews(url, goodreads_id, driver, base_path)
+            driver.get(url)  # Navigate to the review page
+            
+            # Apply the "Newest first" filter before scraping reviews
+            apply_review_filters(driver)
+            
+            # Start scraping the reviews after the filter is applied
+            if verify_sorting_applied(driver):
+                # Proceed with review scraping
+                get_all_reviews(url, goodreads_id, driver, base_path)
+            else:
+                logging.error("Sorting did not apply, skipping review scraping for this book.")
 
             # Restart WebDriver after every 10 books
             if (i + 1) % 10 == 0:
@@ -232,6 +308,7 @@ def main():
     finally:
         driver.quit()  # Ensure driver is properly closed
         logging.info("Driver session closed.")
+
 
 if __name__ == "__main__":
     main()
