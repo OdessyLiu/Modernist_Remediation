@@ -1,5 +1,6 @@
 Data/Web-Scraped_Data/
 Data/Reviews_Scraped/
+Data/tag_coMatrix.csv # This file is too large to be uploaded to GitHub
 Analysis/Scraper/log/*
 Notes/
 chrome_user_data/

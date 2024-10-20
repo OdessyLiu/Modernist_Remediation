@@ -110,3 +110,28 @@ A `count_words()` function has been created and applied to all review files. An 
 The whole English review corpus contains **3,467,963 words**, and the average review lenght is **93.19 words**, according to the results. 
 
 # 4. Tag Co-occurrence
+
+## 4.1 Tag statistics
+
+To get a overall impression of how the readers are tagging graphic biographies, we performed descriptive statistics on the all tags that has appeared in the scraped reviews. 
+
+The tags and the frequencies are saved in [Data/Reviews_Scraped/tag_counter.csv](Data/Reviews_Scraped/tag_counter.csv).
+
+There are overall 32,774 tags appeared in the dataset, with 6,482 unique tags. 
+
+The most frequent tags are (appeared over 1,000 times):
+
+| tag | frequency |
+|-----|-----------|
+|graphic-novels|3023|
+|graphic-novel|2348|
+|biography|1394|
+|non-fiction|1124|
+|comics|1061|
+|history|1044|
+
+## 4.2 Tag co-occurrence
+
+If want to try dynamic and interactive network graph, can try D3.js 
+
+[D3.js Tutorial](https://d3-graph-gallery.com/network)
