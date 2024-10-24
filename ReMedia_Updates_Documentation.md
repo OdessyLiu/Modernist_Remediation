@@ -135,3 +135,13 @@ The most frequent tags are (appeared over 1,000 times):
 If want to try dynamic and interactive network graph, can try D3.js 
 
 [D3.js Tutorial](https://d3-graph-gallery.com/network)
+
+Visualization tool: Gephi -- Force Atlas layout;
+
+The cooccurrence of tags appeared over 10 times in the corpus: 
+
+![tag_coocc_short](Figures/tag_coocc_short.png)
+
+The cooccurrence of all tags:
+
+![tag_coocc_full](Figures/tag_coocc_full.png)
