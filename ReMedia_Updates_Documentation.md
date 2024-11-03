@@ -145,3 +145,44 @@ The cooccurrence of tags appeared over 10 times in the corpus:
 The cooccurrence of all tags:
 
 ![tag_coocc_full](Figures/tag_coocc_full.png)
+
+# 5. Periodical Tags
+
+Notebook: [Analysis/Tag_periodical_identification.ipynb](Analysis/Tag_periodical_identification.ipynb)
+
+## 5.1 GPT-4o selection
+
+Prompt:
+
+```
+The file provided is a CSV containing a column with user-generated tags for graphic biographies on Goodreads.
+
+Here are some example tags that represent historical periods or specific eras, also called "periodical tags":
+
+[20th-century, Victorian, Renaissance, 21st-century, medieval, wwii, 1960s, 1901-2000-modern-set]
+
+Using these examples as a guide, please identify and list additional tags from the dataset that similarly convey meanings related to historical periods, eras, or specific time frames. These tags may refer to centuries, historical epochs, or terms associated with particular historical periods.
+
+Return a table with two columns: tag and confidence. The tag column should contain the tags that you believe are periodical tags according to the examples, and the confidence column should contain a value between 0 and 1 indicating your confidence that the tag is periodical (with 1 representing absolute confidence). Please also include the seed tags in this table (if present in the dataset), with their confidence set to 1. Please only return the tags that your confidence level bigger than 0.8.
+```
+
+Output: [Data/Tags/GPT-4_Filtered_Periodical_Tags.csv](Data/Tags/GPT-4_Filtered_Periodical_Tags.csv)
+
+## 5.2 BERT-embedding + cosine similarity
+
+1. Manually select some **seeds**, which are the examples of the periodical tags;
+   -  Seeds path: [Data/Tags/tag_periodical_seeds.csv](Data/Tags/tag_periodical_seeds.csv)
+2. Calculate the word embeddings for the tags with BERT;
+   - BERT model: bert-base-uncased;
+3. Calculate the cosine similarity of the embeddings between each tag with each seeds, and select the maximum similarity as the similarity of the embeddings between tag and seeds;
+   - tag-embedding-max_sim path: [Data/Tags/tag_embedding_maxsim.csv](Data/Tags/tag_embedding_maxsim.csv)
+4. Select the tags that has max_sim bigger than 0.8;
+
+![BERT-embedding-periodical](Figures/tag_bert_maxsim.png)
+
+## 5.3 Compare BERT-based and GPT-based periodical tags
+
+Find gpt_not_in_embedding and embedding_not_in_gpt, both methods:
+
+- contains some tags that are not periodical tags;
+- missed some periodical tags that identified by another;
