@@ -3,7 +3,7 @@ Analysis/poster240925.ipynb
 Analysis/Tag_clustering.ipynb
 Data/Web-Scraped_Data/
 Data/Reviews_Scraped/
-Data/Tags/tag_coMatrix.csv # This file is too large to be uploaded to GitHub
+Data/Tags/tag_coMatrix.csv
 Data/Tags/tag_embedding.csv
 Data/Tags/tag_embedding_maxsim.csv
 Data/LDA_Texts.txt
