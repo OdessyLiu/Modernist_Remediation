@@ -6,6 +6,7 @@ Data/Reviews_Scraped/
 Data/Tags/tag_coMatrix.csv # This file is too large to be uploaded to GitHub
 Data/Tags/tag_embedding.csv
 Data/Tags/tag_embedding_maxsim.csv
+Data/LDA_Texts.txt
 Analysis/Scraper/log/*
 Notes/
 chrome_user_data/
