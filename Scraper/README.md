@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is a web scraper designed to extract book reviews from Goodreads. It fetches user reviews, ratings, and other related data using **Selenium** and **BeautifulSoup** for web scraping. The scraper was initially inspired by [Maria Antoniak's GoodReadsScraper](https://github.com/maria-antoniak/goodreads-scraper), but has been modified to work with Goodreads' current HTML structure and optimized for large-scale data collection.
+This folder is a web scraper designed to extract book reviews from Goodreads. It fetches user reviews, ratings, and other related data using **Selenium** and **BeautifulSoup** for web scraping. The scraper was initially inspired by [Maria Antoniak's GoodReadsScraper](https://github.com/maria-antoniak/goodreads-scraper), but has been modified to work with Goodreads' current HTML structure and optimized for large-scale data collection.
 
 ## Features
 
