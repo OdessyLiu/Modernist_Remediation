@@ -7,14 +7,12 @@ Data/Goodreads_Comics_Data/Data_Files/GraphicBios_ActivePeriodFixed_240826.xlsx
 Data/Goodreads_Comics_Data/Data_Files/GraphicBios.xlsx
 Data/Goodreads_Comics_Data/Data_Files/GraphicBiosNew.xlsx
 Data/Goodreads_Comics_Data/Data_Files/Masterdata_ongoing.xlsx
+Data/Goodreads_Comics_Data/Data_Files/Masterdata_ongoing_227.xlsx
 
-Data/Tags/tag_coMatrix.csv
-Data/Tags/tag_embedding.csv
-Data/Tags/tag_embedding_maxsim.csv
+Data/Tags/*
 
 Data/Reviews/*
 
-Data/LDA_Texts.txt
 Analysis/Scraper/log/*
 Notes/
 chrome_user_data/

@@ -25,6 +25,7 @@ This project is **in progress**.
 
 ```
 Analysis/            # Jupyter notebooks & analysis scripts
+├── Emotion&Keyness/      # Experiemnt for readers' emotional modeling
 Data/                # Main datasets and small testing datasets
 ├── Goodreads_Comics_Data/      # folder for metadata of graphic biographies
 ├── Tags/                       # folder for tags(shelves) information
@@ -49,7 +50,7 @@ To view other details of the project, please visit [the lab website](https://ecb
 
 #### 1. Scrape reviews
 
-The scraper is locaed in the [Scraper/](Scraper) folder. Please download the folder and follow the [README](Scraper/README.md) file. 
+The scraper is located in the [Scraper/](Scraper) folder. Please download the folder and follow the [README](Scraper/README.md) file. 
 
 - **Requirements:** Python 3.10 and dependencies, see [README](Scraper/README.md) file
 - **Setup:**
@@ -60,7 +61,16 @@ The scraper is locaed in the [Scraper/](Scraper) folder. Please download the fol
 
 #### 2. Emotion analysis and keyness analysis
 
-TBC
+This experiment aims to investigate the readers' emotional response toward the graphic biographies books, the books' subjects, and the genre, reflected in the book reviews. 
+
+The detailed experiment is located in the [Analysis/Emotion&Keyness/](Analysis/Emotion&Keyness) folder. 
+
+- **Files**
+  - **[ValenceArousalAnalysis.ipynb](Analysis/Emotion&Keyness/ValenceArousalAnalysis.ipynb)**: Notebook for applying valence & arousal prediction to the book reviews.
+  - **[VA_KeynessAnalysis.md](Analysis/Emotion&Keyness/VA_KeynessAnalysis.md)**: Documentation for keyness analysis. 
+- **Tools:**
+  - [Multilingual_VA_prediction](https://github.com/gmendes9/multilingual_va_prediction) (Mendes & Martins, 2023)
+  - [Sketch Engine](https://www.sketchengine.eu/)
 
 #### 3. Tag statistics
 
@@ -74,7 +84,11 @@ TBC
 
 ## Contributors
 
-- **PI:** Dr. Emily Christina Murphy
-- **Research assistants:**
+👩‍🏫 **PI:** Dr. Emily Christina Murphy
+
+🧠 **Research assistants:**
+
   - Qilin (Odessy) Liu, M.A., @[OdessyLiu](https://github.com/OdessyLiu)
   - Julie Carr
+
+🔗 For more about the project and ReMedia Lab, please visit [our website](https://remediaresearch.ca/).
