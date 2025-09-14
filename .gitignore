@@ -2,6 +2,8 @@ Analysis/pilot.ipynb
 Analysis/poster240925.ipynb
 Analysis/Tag_clustering.ipynb
 
+Data/*
+
 Data/Goodreads_Comics_Data/Data_Files/GraphicBiosCleaned.csv
 Data/Goodreads_Comics_Data/Data_Files/GraphicBios_ActivePeriodFixed_240826.xlsx
 Data/Goodreads_Comics_Data/Data_Files/GraphicBios.xlsx
