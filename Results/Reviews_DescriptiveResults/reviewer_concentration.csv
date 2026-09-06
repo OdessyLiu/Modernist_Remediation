@@ -1,0 +1,16 @@
+metric,value
+unique_reviewers,12619
+single_review_reviewers,10450
+single_review_reviewer_percent,82.81163325144624
+reviewers_covering_multiple_books,2167
+multiple_book_reviewer_percent,17.17251763214201
+median_reviews_per_reviewer,1.0
+mean_reviews_per_reviewer,1.4238053728504636
+maximum_reviews_per_reviewer,70
+maximum_books_per_reviewer,70
+top_1_percent_review_share,0.10819836366672232
+top_5_percent_review_share,0.23259308732676573
+top_10_percent_review_share,0.3174152613124061
+review_count_gini,0.27121175254456187
+reviewer_hhi,0.0002280793515160099
+effective_reviewer_count,4384.438982981787

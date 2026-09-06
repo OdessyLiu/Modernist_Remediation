@@ -1,0 +1,59 @@
+occurrences,book_count,book_ids,review_indexes,text_preview
+64,52,10401677-kiki-de-montparnasse | 12179682-castro | 15792872-feynman | 16678351-superzelda | 178019129-hedy-lamarr | 18465496-andre-the-giant | 199451852-delights | 22312041-vincent | 26240706-agatha | 269353.Louis_Riel | 28818262-becoming-andy-warhol | 31080.Malcolm_X | 31305515-gauguin | 31305589-josephine-baker | 31934542-rise-of-the-dungeon-master | 31944933-audubon-on-the-wings-of-the-world | 32783833-hostage | 34227628-magritte | 34697189-frida-kahlo | 34734476-monet | 35888383-photographic | 36373423-all-the-answers | 40554540-goya | 43317483-year-of-the-rabbit | 43613453-darwin | 45180609-rodin | 50159157-glass-town | 50891560-for-justice | 50915243-siberian-haiku | 51075286-orwell | 51075287-bunuel-in-the-labyrinth-of-the-turtles | 54017867-hawking | 54571511-ana-s-nin---sur-la-mer-des-mensonges | 54587149-chasin-the-bird | 54776164-the-incredible-nellie-bly | 54786126-morrison-hotel | 56269253-leonard-cohen | 56969413-flung-out-of-space | 57378791-did-you-hear-what-eddie-gein-done | 57693671-putin-s-russia | 58484191-accidental-czar | 58667424-joseph-smith-and-the-mormons | 59060441-alice-guy | 59251235-einstein | 61047526-tangier-in-the-rain | 61337907-the-twilight-man | 61363154-ms-davis | 61363155-we-re-all-just-fine | 61783879-starman | 61964721-lugosi | 64391839-funny-things | 7352725-anne-frank,52 | 173 | 181 | 200 | 556 | 805 | 1359 | 2028 | 2596 | 2770 | 2874 | 3243 | 8223 | 8250 | 8436 | 8531 | 9503 | 9511 | 9751 | 10182 | 10190 | 10376 | 10430 | 10451 | 10852 | 10931 | 10963 | 11138 | 11956 | 15507 | 15782 | 16187 | 16263 | 16274 | 16295 | 16380 | 17617 | 18087 | 22120 | 22255 | 22434 | 23320 | 23803 | 23804 | 24283 | 24368 | 27074 | 27159 | 27467 | 27710 | 27765 | 28259 | 28844 | 29033 | 29370 | 29649 | 29781 | 29935 | 29959 | 30202 | 30350 | 30368 | 30970 | 31137,3.5
+27,19,16059564-trinity | 18405540-the-boxer | 18465496-andre-the-giant | 22312041-vincent | 2943009-alan-s-war | 33098848-alexander-hamilton | 34227628-magritte | 36373423-all-the-answers | 40186431-weegee | 43317483-year-of-the-rabbit | 50159157-glass-town | 50915243-siberian-haiku | 56969413-flung-out-of-space | 57378791-did-you-hear-what-eddie-gein-done | 57938387-federico | 58667424-joseph-smith-and-the-mormons | 61783882-armed-with-madness | 73924272-phoolan-devi | 7477328-the-beats,1541 | 2252 | 2799 | 9080 | 9711 | 10202 | 10218 | 10244 | 11021 | 11870 | 15624 | 15668 | 15670 | 16874 | 17285 | 22449 | 22995 | 23024 | 23281 | 23369 | 23895 | 24360 | 27158 | 29491 | 29643 | 29698 | 31459,4.5
+23,13,16059564-trinity | 18465496-andre-the-giant | 32783833-hostage | 34734476-monet | 35888383-photographic | 43317483-year-of-the-rabbit | 43613453-darwin | 49494921-bowie | 50159157-glass-town | 54017867-hawking | 54776164-the-incredible-nellie-bly | 56969413-flung-out-of-space | 61825623-hendrix,149 | 2030 | 2228 | 2276 | 9517 | 10300 | 10306 | 15914 | 16178 | 16196 | 17098 | 22456 | 22468 | 23313 | 23371 | 23750 | 23810 | 28057 | 28143 | 28248 | 29664 | 29700 | 30375,3.5 stars
+21,21,28818642-the-case-of-alan-turing | 34445181-johnny-appleseed | 36258390-the-provocative-colette | 36373423-all-the-answers | 38315848-prisoner-155 | 41104162-nobody-s-fool | 44661259-bob-marley-in-comics | 45180609-rodin | 45180626-michael-jackson-in-comics | 50159157-glass-town | 54776164-the-incredible-nellie-bly | 54852191-love-me-please | 56269253-leonard-cohen | 57322548-man-in-furs | 57693671-putin-s-russia | 58320999-alfred-hitchcock | 58321000-rosa-parks | 58480576-django-hand-on-fire | 58558353-life-of-che | 59551313-golden-boy | 60680224-tokyo-rose---zero-hour,256 | 431 | 2369 | 8217 | 8701 | 9304 | 9333 | 9776 | 11131 | 15500 | 17264 | 22171 | 22922 | 23455 | 24028 | 27246 | 28931 | 29018 | 30231 | 30345 | 31376,Note I accessed a digital review copy of this book through Edelweiss.
+15,15,10991383-grace | 26240627-the-imitation-game | 32713508-billie-holiday | 32713786-sartre | 33098848-alexander-hamilton | 34506909-is-this-guy-for-real | 35888383-photographic | 39830625-the-beatles-in-comics | 39830626-philip-k-dick | 54017867-hawking | 58437897-petrograd | 58484191-accidental-czar | 58724891-verissimus | 59251235-einstein | 73924272-phoolan-devi,148 | 623 | 8825 | 9014 | 9079 | 10921 | 11877 | 16522 | 17589 | 17731 | 17816 | 22040 | 23745 | 30757 | 32424,Note I received a digital review copy of this book from the publisher through NetGalley.
+12,12,18465496-andre-the-giant | 22312041-vincent | 26240627-the-imitation-game | 26240706-agatha | 31934542-rise-of-the-dungeon-master | 31944933-audubon-on-the-wings-of-the-world | 54776164-the-incredible-nellie-bly | 56969413-flung-out-of-space | 57938387-federico | 58437897-petrograd | 59485970-david-bowie-in-comics | 61363155-we-re-all-just-fine,198 | 1485 | 2308 | 2446 | 15671 | 17738 | 24260 | 27398 | 27612 | 29699 | 30364 | 30862,2.5
+9,8,10041326-baby-s-in-black | 31944933-audubon-on-the-wings-of-the-world | 42097094-guant-namo-kid | 50159157-glass-town | 54571511-ana-s-nin---sur-la-mer-des-mensonges | 60459331-beethoven | 61337907-the-twilight-man | 64391839-funny-things,2576 | 11703 | 11955 | 11959 | 23257 | 27823 | 28540 | 30220 | 31103,4.5 stars
+5,4,22312041-vincent | 23167772-pablo | 34734476-monet | 54571511-ana-s-nin---sur-la-mer-des-mensonges,1536 | 1676 | 27825 | 28287 | 30444,Beautiful
+4,4,101136053-the-golden-voice | 57693671-putin-s-russia | 59251235-einstein | 61783771-black-white,10922 | 15501 | 17469 | 32254,Booklist review pending
+4,4,34506909-is-this-guy-for-real | 36373423-all-the-answers | 37534380-monk | 40186431-weegee,2743 | 9692 | 17282 | 32303,httpcomicsalternative.comcomics-a...
+4,4,10401677-kiki-de-montparnasse | 34445181-johnny-appleseed | 41104162-nobody-s-fool | 43478977-eugene-v-debs,424 | 8460 | 8734 | 8930,Excellent!
+3,3,26240706-agatha | 57693671-putin-s-russia | 59251235-einstein,10925 | 15538 | 27690,3.5 stars.
+3,3,22312041-vincent | 31944933-audubon-on-the-wings-of-the-world | 61363154-ms-davis,1361 | 2589 | 28852,beautiful
+3,3,18465496-andre-the-giant | 22312041-vincent | 49494921-bowie,1679 | 2241 | 28038,2.5 stars
+3,3,125120657-i-am-stan | 26240627-the-imitation-game | 35888383-photographic,23747 | 28715 | 30765,DNF
+2,2,34227681-nick-cave | 57378791-did-you-hear-what-eddie-gein-done,10196 | 16671,Loved it!
+2,2,56969413-flung-out-of-space | 61825623-hendrix,10305 | 29487,4.25 rating!
+2,2,269353.Louis_Riel | 6600626-trotsky,10633 | 28805,Very informative.
+2,1,50891560-for-justice,10950 | 10956,"""Take pride in the principles of journal dear. Never allow your country to lie to you about its past..."" P 196I can't help but feel this summarizes much of my experience as I dig through WW2 truth via"
+2,2,15792872-feynman | 26240627-the-imitation-game,1304 | 30738,Interesting read.
+2,2,50915243-siberian-haiku | 54017867-hawking,139 | 2805,Very good book
+2,1,32783833-hostage,15796 | 16320,I had no idea this was about an actual person when I read a quick preview. This was an interesting story about Christophe André being held hostage. With no real explanation why except perhaps for rans
+2,2,32783833-hostage | 52883804-jack-kirby,16143 | 27354,Incredible.
+2,2,32783833-hostage | 50159157-glass-town,16189 | 22913,Loved it
+2,1,32783833-hostage,16287 | 16340,got a bit repetitive but I guess that the whole point of it. Really cool story.
+2,2,26240662-woody-guthrie-and-the-dust-bowl-ballads | 32783833-hostage,16356 | 22834,This comic was discussed in The Secret Stacks Episode 31.
+2,1,18465496-andre-the-giant,1862 | 1863,"My biggest complaint is that it's all in black and white, which I hate in graphic novels.The story was ok, painted a faint picture of Andre the Giant's life, alluding to how hard it was being a giant "
+2,2,18465496-andre-the-giant | 54587149-chasin-the-bird,2076 | 29787,Recommended review httpswww.goodreads.comreviewshow...
+2,2,43317483-year-of-the-rabbit | 50159157-glass-town,22441 | 23423,My review ran in the  Minneapolis Star-Tribune .
+2,2,17287065-woman-rebel | 61337907-the-twilight-man,22587 | 31092,httpsucplbookchallenge.blogspot.co...
+2,1,17287065-woman-rebel,22704 | 22705,"Ehh. I don't much care for the art style, but Bagge's love and respect for Sanger is clear."
+2,2,17287065-woman-rebel | 35888383-photographic,22733 | 23607,Amazing!
+2,2,32191895-the-ladies-in-waiting | 34734476-monet,22856 | 28240,Beautiful.
+2,2,29501178-glenn-gould | 31944933-audubon-on-the-wings-of-the-world,2642 | 8337,Stunning artwork
+2,2,28818262-becoming-andy-warhol | 58667424-joseph-smith-and-the-mormons,27170 | 27440,Nope.
+2,1,52883804-jack-kirby,27306 | 27309,"This is a comic with something to say. I knew a lot about Jack Kirby before reading this. I knew he'd been robbed by Marvel, and that he didn't see eye-to-eye with Stan Lee. But wow. I had no idea the"
+2,2,34734476-monet | 54571511-ana-s-nin---sur-la-mer-des-mensonges,27767 | 28285,Stunning illustrations
+2,2,49494921-bowie | 50022132-i-know-what-i-am,28003 | 28415,review coming soon!
+2,2,49494921-bowie | 61337907-the-twilight-man,28074 | 31093,Absolutely beautiful!
+2,2,38748249-andy | 50022132-i-know-what-i-am,28446 | 30399,Note I received a signed copy of this book from the publisher at ALA Annual 2019.
+2,2,1765760.J_Edgar_Hoover | 6600626-trotsky,28622 | 28807,You can read my thoughts here.
+2,2,7352725-anne-frank | 7980565-the-14th-dalai-lama,29344 | 29897,Click to see book in BCPL's online catalog
+2,2,56969413-flung-out-of-space | 7980565-the-14th-dalai-lama,29669 | 29846,read
+2,2,12179682-castro | 14475543-the-hypo,29969 | 31336,Find this book at Hillingdon Libraries
+2,1,26240623-an-olympic-dream,30135 | 30152,A graphic novel telling the story of a Somali Olympian who becomes a refugee. An important story to be told at the current time. Humanizes refugees and will give you a case of the feels.
+2,2,28818236-the-trial-of-roger-casement | 34734476-monet,305 | 28267,Very interesting
+2,2,39946133-the-life-of-frederick-douglass | 61337907-the-twilight-man,3093 | 30989,Excellent
+2,1,101136053-the-golden-voice,32246 | 32247,"This was a fascinating look into the life of an artist who wanted only to practice her craft, along with all the personal and political events that got in her way. I dont want to say too much about th"
+2,2,31305589-josephine-baker | 32713508-billie-holiday,3226 | 22020,httpcomicsalternative.comeuro-com...
+2,2,32783833-hostage | 34445181-johnny-appleseed,432 | 16339,Good.
+2,2,26240623-an-olympic-dream | 61047526-tangier-in-the-rain,53 | 30156,'
+2,1,15792872-feynman,682 | 840,"This graphic biography tells the life story of the great physicist while aptly displaying his charm, humor,  adventurous spirit."
+2,1,60316981-now-let-me-fly,8613 | 8614,This will be one of the best reads of my year. It is only 8 days into the year.This graphic telling of the life of Eugene Bullard brings to the forefront the status of Black Americans in the past and 
+2,2,39830625-the-beatles-in-comics | 56648181-che,8822 | 11224,httpcomicsalternative.comepisode-...
+2,1,60784723-we-are-on-our-own,9160 | 9161,"Oh wow. I loved this book. The rough sketch look to the art made it feel more personable and in motion. The story, like most Holocaust stories, is hard to describe because I cant say it was great with"
+2,2,2080794.Nat_Turner | 54852191-love-me-please,9300 | 32020,Wow.
+2,2,42097094-guant-namo-kid | 43613453-darwin,9510 | 28539,3.55 Stars
+2,2,36206207-niki-de-saint-phalle | 53171661-leonardo-da-vinci,9549 | 11108,Note I received a digital review copy from the publisher through NetGalley.

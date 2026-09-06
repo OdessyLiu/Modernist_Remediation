@@ -1,0 +1,13 @@
+scope               , variable_1      , variable_2  , method  , correlation          , n
+review_level_overall, star_rating     , valence     , pearson , 0.4063133520196834   , 17373
+review_level_overall, star_rating     , valence     , spearman, 0.40584550565480715  , 17373
+review_level_overall, star_rating     , arousal     , pearson , 0.16908901971531787  , 17373
+review_level_overall, star_rating     , arousal     , spearman, 0.2654979142616742   , 17373
+review_level_overall, star_rating     , word_count  , pearson , -0.02690625171987337 , 17373
+review_level_overall, star_rating     , word_count  , spearman, -0.0666766611367195  , 17373
+review_level_overall, star_rating     , likes       , pearson , 0.004116229280718757 , 17373
+review_level_overall, star_rating     , likes       , spearman, -0.012179924421465862, 17373
+within_book_centered, star_rating     , valence     , pearson , 0.4114044582864333   , 17373
+book_level_means    , mean_star_rating, mean_valence, pearson , 0.5775408914322832   ,   217
+within_book_centered, star_rating     , valence     , spearman, 0.4060305739922967   , 17373
+book_level_means    , mean_star_rating, mean_valence, spearman, 0.5222000486768728   ,   217

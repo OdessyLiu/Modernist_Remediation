@@ -1,0 +1,12 @@
+metric,value
+dated_review_count,17967
+invalid_or_missing_review_date_count,0
+earliest_review_date,2007-05-16
+latest_review_date,2024-10-05
+review_year_count,18
+books_with_publication_year,217
+distinct_publication_year_count,19
+earliest_book_publication_year,2003
+latest_book_publication_year,2024
+median_review_age_years,1.0
+reviews_predating_publication_year,1862

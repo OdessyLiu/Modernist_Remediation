@@ -1,6 +1,7 @@
 Analysis/pilot.ipynb
 Analysis/poster240925.ipynb
 Analysis/Tag_clustering.ipynb
+Analysis/Archive/*
 
 Data/*
 !/Data/.gitkeep

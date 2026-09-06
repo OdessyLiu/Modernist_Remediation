@@ -1,0 +1,9 @@
+field,present_count,missing_count,missing_percent,unique_count,observed_types
+arousal,17967,0,0.0,8818,float:17967
+id,17967,0,0.0,217,str:17967
+index,17967,0,0.0,17967,int:17967
+likes,17967,0,0.0,70,int:17967
+shelves,17967,0,0.0,4663,list:17967
+text,17967,0,0.0,17739,str:17967
+valence,17967,0,0.0,9258,float:17967
+word_count,17967,0,0.0,721,int:17967
