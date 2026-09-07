@@ -81,6 +81,42 @@ def first_existing(paths: Sequence[Path]) -> Path | None:
     return next((path for path in paths if path.is_file()), None)
 
 
+def local_book_metadata():
+    """Read BOOK_SHEET from the local 225-book workbook (standard library only)."""
+    from zipfile import ZipFile
+    from xml.etree import ElementTree as ET
+    path = PROJECT_ROOT / 'Data/Goodreads_Comics_Data/Data_Files/Masterdata_ongoing_225.xlsx'
+    ns = '{http://schemas.openxmlformats.org/spreadsheetml/2006/main}'
+    with ZipFile(path) as archive:
+        strings = [''.join(t.text or '' for t in si.iter(ns + 't'))
+                   for si in ET.fromstring(archive.read('xl/sharedStrings.xml'))]
+        workbook = ET.fromstring(archive.read('xl/workbook.xml'))
+        sheet = next(s for s in workbook.find(ns + 'sheets') if s.attrib['name'] == 'BOOK_SHEET')
+        rel_id = sheet.attrib['{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id']
+        rels = ET.fromstring(archive.read('xl/_rels/workbook.xml.rels'))
+        target = next(r.attrib['Target'] for r in rels if r.attrib['Id'] == rel_id)
+        target = target.lstrip('/') if target.startswith('/') else 'xl/' + target
+        rows = []
+        for row in ET.fromstring(archive.read(target)).iter(ns + 'row'):
+            cells = {}
+            for cell in row:
+                column = ''.join(c for c in cell.attrib['r'] if c.isalpha())
+                value = cell.find(ns + 'v')
+                value = value.text if value is not None else ''
+                if cell.attrib.get('t') == 's':
+                    value = strings[int(value)]
+                elif cell.attrib.get('t') == 'inlineStr':
+                    value = ''.join(t.text or '' for t in cell.iter(ns + 't'))
+                cells[column] = value
+            rows.append(cells)
+    headers = rows[0]
+    records = [{headers[k]: v for k, v in row.items() if k in headers} for row in rows[1:]]
+    books = {r['goodreads_id']: r for r in records if r.get('goodreads_id')}
+    if len(books) != len(records):
+        raise ValueError('Duplicate or missing Goodreads IDs in book metadata')
+    return path, books
+
+
 def load_records(path: Path) -> list[dict[str, Any]]:
     with path.open(encoding="utf-8") as handle:
         data = json.load(handle)
@@ -424,11 +460,46 @@ def analyze(
         for shelf in set(shelves):
             shelf_reviews[shelf] += 1
             shelf_books[shelf].add(row["id"])
+    shelved_count = sum(bool(row['shelves']) for row in records)
+    shelf_sizes = [len(row['shelves']) for row in records]
+    nonempty_sizes = [size for size in shelf_sizes if size]
+    shelf_metrics = {
+        'total_reviews': n_rows,
+        'reviews_with_shelves': shelved_count,
+        'reviews_with_shelves_percent': 100 * shelved_count / n_rows,
+        'reviews_without_shelves': n_rows - shelved_count,
+        'reviews_without_shelves_percent': 100 * (n_rows - shelved_count) / n_rows,
+        'total_stored_shelf_assignments': sum(shelf_sizes),
+        'unique_shelf_labels': len(shelf_reviews),
+        'mean_shelves_per_review': float(np.mean(shelf_sizes)),
+        'mean_shelves_per_shelved_review': mean_or_nan(nonempty_sizes),
+        'median_shelves_per_shelved_review': median_or_nan(nonempty_sizes),
+        'maximum_stored_shelves_per_review': max(shelf_sizes),
+        'books_with_shelved_reviews': sum(any(r['shelves'] for r in group) for group in by_book.values()),
+        'books_with_shelved_reviews_percent': 100 * sum(any(r['shelves'] for r in group) for group in by_book.values()) / len(by_book),
+        'labels_used_in_one_review': sum(count == 1 for count in shelf_reviews.values()),
+        'labels_used_in_one_book': sum(len(ids) == 1 for ids in shelf_books.values()),
+        'duplicate_assignments_within_reviews': duplicate_shelves_within_review,
+    }
+    write_csv(output_dir / 'shelf_coverage_summary.csv',
+              ({'metric': key, 'value': value} for key, value in shelf_metrics.items()), ('metric', 'value'))
+    write_csv(output_dir / 'shelves_per_review.csv',
+              ({'shelf_count': size, 'review_count': shelf_sizes.count(size),
+                'percent_all_reviews': 100 * shelf_sizes.count(size) / n_rows}
+               for size in range(max(shelf_sizes) + 1)),
+              ('shelf_count', 'review_count', 'percent_all_reviews'))
+    write_csv(output_dir / 'shelf_coverage_by_book.csv',
+              ({'id': row['id'], 'review_count': row['review_count'],
+                'reviews_with_shelves': row['reviews_with_shelves'],
+                'percent_reviews_with_shelves': 100 * row['reviews_with_shelves'] / row['review_count'],
+                'unique_shelves': row['unique_shelves']} for row in book_rows),
+              ('id', 'review_count', 'reviews_with_shelves', 'percent_reviews_with_shelves', 'unique_shelves'))
     shelf_rows = [
         {
             "shelf": shelf,
             "review_count": count,
             "review_percent": 100.0 * count / n_rows,
+            "percent_shelved_reviews": 100.0 * count / shelved_count if shelved_count else math.nan,
             "book_count": len(shelf_books[shelf]),
             "book_percent": 100.0 * len(shelf_books[shelf]) / len(by_book),
         }
@@ -437,7 +508,7 @@ def analyze(
     write_csv(
         output_dir / "shelf_summary.csv",
         shelf_rows,
-        ("shelf", "review_count", "review_percent", "book_count", "book_percent"),
+        ("shelf", "review_count", "review_percent", "percent_shelved_reviews", "book_count", "book_percent"),
     )
 
     # Exact-text duplication is reported, but records are not removed.
@@ -502,7 +573,7 @@ def analyze(
         {"metric": "index_min", "value": min(indexes)},
         {"metric": "index_max", "value": max(indexes)},
         {"metric": "missing_indexes_within_min_max", "value": len(expected_index_set - set(indexes))},
-        {"metric": "unexpected_schema_record_count", "value": sum(set(row) != set(EXPECTED_FIELDS) for row in records)},
+        {"metric": "unexpected_schema_record_count", "value": sum(not set(EXPECTED_FIELDS).issubset(row) for row in records)},
         {"metric": "valence_outside_0_1", "value": sum(not 0 <= row["valence"] <= 1 for row in records)},
         {"metric": "arousal_outside_0_1", "value": sum(not 0 <= row["arousal"] <= 1 for row in records)},
         {"metric": "negative_likes", "value": sum(row["likes"] < 0 for row in records)},
@@ -514,7 +585,18 @@ def analyze(
     write_csv(output_dir / "audit_summary.csv", audit_rows, ("metric", "value"))
 
     make_figures(numeric_values, book_rows, shelf_rows, output_dir)
-    if review_metadata_path is not None and book_metadata_path is not None:
+    if all({'rating', 'reviewer_url', 'review_date'}.issubset(row) for row in records):
+        local_book_path, books_by_goodreads = local_book_metadata()
+        enriched = [dict(row, reviewer_id=pseudonymous_reviewer_id(row['reviewer_url'])) for row in records]
+        join_diagnostics = {
+            'review_metadata_mode': 'embedded_in_input_no_review_join',
+            'input_review_count': len(records),
+            'va_books_with_metadata': len({r['id'] for r in records} & books_by_goodreads.keys()),
+        }
+        additional_lines = analyze_additional_dimensions(
+            enriched, output_dir, join_diagnostics, books_by_goodreads, input_path, local_book_path,
+        )
+    elif review_metadata_path is not None and book_metadata_path is not None:
         enriched, join_diagnostics, books_by_goodreads = enrich_records(
             records, review_metadata_path, book_metadata_path
         )
@@ -1092,7 +1174,10 @@ def analyze_additional_dimensions(
         f"Review metadata source: `{review_metadata_path}`  ",
         f"Book metadata source: `{book_metadata_path}`",
         "",
-        f"The enrichment matched all {n_rows:,} VA records. Matching used Goodreads book ID, exact text, likes, shelves, and word count; it did not assume that file order was stable. Reviewer profile URLs were converted to deterministic pseudonymous IDs, and names/URLs were not written to the results.",
+        (f"All {n_rows:,} reviews use ratings, reviewer URLs, and dates already present in the input JSON; no review-metadata join was performed. "
+         if join_diagnostics.get('review_metadata_mode') == 'embedded_in_input_no_review_join'
+         else f"The enrichment matched all {n_rows:,} VA records using Goodreads book ID, exact text, likes, shelves, and word count. ")
+        + "Reviewer profile URLs were converted to deterministic pseudonymous IDs for the reviewer outputs. Book publication metadata was matched by Goodreads ID.",
         "",
         "### Star-rating distribution and textual valence",
         "",
@@ -1265,7 +1350,7 @@ def write_report(
         "## Dataset and data quality",
         "",
         f"- {n:,} reviews across {len(book_rows):,} unique book IDs ({len(records[0]):,} fields per record).",
-        f"- No missing values occur in the eight stored fields; all records share the expected schema.",
+        "- Missing values by stored field: " + "; ".join(f"{field}: {sum(is_missing(row.get(field)) for row in records):,}" for field in records[0]) + ".",
         f"- Index values are unique and span {min(row['index'] for row in records):,}–{max(row['index'] for row in records):,}; they retain {len(set(range(min(row['index'] for row in records), max(row['index'] for row in records) + 1)) - {row['index'] for row in records}):,} gaps from the source indexing.",
         f"- There are no exact duplicate full records. Exact text is repeated in {len(duplicate_groups):,} groups, representing {duplicate_extra:,} additional rows beyond the first; {cross_book_groups:,} groups span more than one book.",
         f"- {shelf_empty:,} reviews ({100*shelf_empty/n:.1f}%) have no shelf labels. This is absence of optional shelf metadata, not a missing JSON field.",
@@ -1293,7 +1378,17 @@ def write_report(
     ]
     for row in book_rows[:10]:
         lines.append(f"| {row['id']} | {row['review_count']:,} | {row['mean_valence']:.3f} | {row['mean_arousal']:.3f} |")
-    lines += ["", "Most frequent shelves:", "", "| Shelf | Reviews | Books |", "|---|---:|---:|"]
+    sizes = Counter(len(row['shelves']) for row in records)
+    shelved = n - shelf_empty
+    assignments = sum(size * count for size, count in sizes.items())
+    lines += ["", "### Shelf coverage", "",
+              f"Shelf labels are present on {shelved:,} reviews ({100*shelved/n:.1f}%); {shelf_empty:,} ({100*shelf_empty/n:.1f}%) have empty shelf lists. There are {assignments:,} stored assignments and {len(shelf_rows):,} distinct labels. Among reviews with shelves, the mean number of labels is {assignments/shelved:.2f}. Labels occur across {sum(row['reviews_with_shelves'] > 0 for row in book_rows)} of {len(book_rows)} books.",
+              "", "| Stored labels per review | Reviews | % of all reviews |", "|---:|---:|---:|"]
+    for size, count in sorted(sizes.items()):
+        lines.append(f"| {size} | {count:,} | {100*count/n:.1f}% |")
+    lines += ["", "Counts describe stored shelf metadata. An empty list does not establish that a reviewer never shelved the book. The observed maximum is not evidence of a platform limit. Labels are retained verbatim (for example, graphic-novel and graphic-novels remain separate); labels overlap, so percentages across labels are not additive.",
+              "", "Additional tables: `shelf_coverage_summary.csv` (coverage, assignments, and rare labels), `shelves_per_review.csv` (label-count distribution), and `shelf_coverage_by_book.csv` (coverage within each book). In `shelf_summary.csv`, `review_percent` uses all reviews as the denominator and `percent_shelved_reviews` uses only reviews with at least one stored label.",
+              "", "Most frequent shelves:", "", "| Shelf | Reviews | Books |", "|---|---:|---:|"]
     for row in shelf_rows[:10]:
         lines.append(f"| {row['shelf']} | {row['review_count']:,} | {row['book_count']:,} |")
 

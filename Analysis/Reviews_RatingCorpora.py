@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Partition the VA corpus by recovered star rating; preserve all source fields.
+"""Partition the VA corpus by its stored star rating; preserve all source fields.
 
-Reuses the descriptive analysis metadata join (requires NumPy and Matplotlib).
+Requires only the Python standard library.
 Run: python3 Analysis/Reviews_RatingCorpora.py
 """
 
@@ -10,11 +10,8 @@ import hashlib
 import json
 from pathlib import Path
 
-from Reviews_DescriptiveAnalysis import (
-    DEFAULT_INPUT, DEFAULT_REVIEW_METADATA_CANDIDATES,
-    DEFAULT_BOOK_METADATA_CANDIDATES, PROJECT_ROOT,
-    enrich_records, first_existing, load_records,
-)
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+DEFAULT_INPUT = PROJECT_ROOT / 'Data/Reviews/AllReviews_217_VA.json'
 
 
 GROUPS = {
@@ -33,27 +30,18 @@ def fingerprint(path):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", type=Path, default=DEFAULT_INPUT)
-    parser.add_argument("--review-metadata", type=Path,
-                        default=first_existing(DEFAULT_REVIEW_METADATA_CANDIDATES))
-    parser.add_argument("--book-metadata", type=Path,
-                        default=first_existing(DEFAULT_BOOK_METADATA_CANDIDATES))
     parser.add_argument("--output", type=Path,
                         default=PROJECT_ROOT / "Data/Reviews/Rating")
     args = parser.parse_args()
-    if args.review_metadata is None or args.book_metadata is None:
-        parser.error("Original review and book metadata are required to recover ratings.")
-
-    sources = {name: fingerprint(path) for name, path in (
-        ("input", args.input), ("review_metadata", args.review_metadata),
-        ("book_metadata", args.book_metadata))}
-    originals = load_records(args.input)
+    sources = {"input": fingerprint(args.input)}
+    originals = json.loads(args.input.read_text(encoding='utf-8'))
+    if not isinstance(originals, list) or not originals or not all(isinstance(r, dict) and 'rating' in r for r in originals):
+        raise ValueError('Expected a nonempty JSON array with a rating field on every record.')
     by_index = {row["index"]: row for row in originals}
     if len(by_index) != len(originals):
         raise ValueError("Source indexes must be unique.")
-    enriched, join_audit, _ = enrich_records(
-        originals, args.review_metadata, args.book_metadata)
     groups = {name: [] for name in GROUPS}
-    for row in enriched:
+    for row in originals:
         rating = row["rating"]
         if rating is not None and (isinstance(rating, bool) or rating not in (1, 2, 3, 4, 5)):
             raise ValueError(f"Invalid rating at source index {row['index']}: {rating!r}")
@@ -92,7 +80,7 @@ def main():
         if fingerprint(Path(info["path"])) != info:
             raise ValueError(f"Source changed during execution: {name}")
     manifest = {"sources": sources, "source_review_count": len(originals),
-                "metadata_join_audit": join_audit, "corpora": summaries,
+                "rating_source": "embedded input rating field; no metadata join", "corpora": summaries,
                 "validation": {"complete_disjoint_partition": True,
                                "original_fields_preserved": True,
                                "json_round_trip_verified": True,
@@ -107,14 +95,13 @@ def main():
         ratings = ", ".join("missing (null)" if r is None else str(r) for r in item["ratings"])
         lines.append(f"| {item['file']} | {ratings} | {item['reviews']:,} | {item['books']} | {item['stored_word_count']:,} |")
     lines += ["", "## Preparation and provenance", "",
-              "The VA source has no rating field. Ratings were recovered using `enrich_records` from `Analysis/Reviews_DescriptiveAnalysis.py`, the same join used for the descriptive results. Source paths, SHA-256 hashes, and the join audit are recorded in `manifest.json`.", "",
-              "Matching uses book ID, exact review text, likes, shelves, and stored word count. Duplicate composite keys consume source metadata rows once each in source order. This preserves the metadata multiset, but individual source-index assignments within indistinguishable duplicate groups are ambiguous; see the join audit.", "",
-              "All eight original fields are preserved. Added fields are `rating`, `review_date`, and the deterministic pseudonymous `reviewer_id`. Missing ratings are JSON `null`; unexpected rating values cause an error. Original index values and within-group source order are retained.", "",
+              "Ratings are read directly from the current input JSON. No metadata join is performed. Source paths and SHA-256 hashes are recorded in `manifest.json`.", "",
+              "All original fields and values are preserved, including reviewer names and URLs. No fields are added. Missing ratings are JSON `null`; absent rating fields and unexpected values cause an error. Original indexes and within-group source order are retained.", "",
               "Every source review occurs in exactly one corpus. No sampling, deduplication, length filtering, or text preprocessing was applied. Three stars means middle-rated, not necessarily neutral textual evaluation. Word totals use the existing `word_count` field, not a new tokenizer.", "",
               "## Reproduction", "",
-              "Run from the repository root (Python, NumPy, and Matplotlib required by the reused analysis module):", "",
+              "Run from the repository root (Python standard library only):", "",
               "```sh", "python3 Analysis/Reviews_RatingCorpora.py", "```", "",
-              "Use `--input`, `--review-metadata`, `--book-metadata`, and `--output` to override paths. Default metadata discovery includes the sibling private project, so another checkout may need explicit metadata paths. Re-running replaces these derived outputs. Original data is never modified.", "",
+              "Use `--input` and `--output` to override paths. Re-running replaces these derived outputs. Original data is never modified.", "",
               "Validation checks exhaustive and disjoint membership, preservation of original fields, JSON read-back, and unchanged source hashes."]
     (args.output / "README.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(json.dumps(summaries, indent=2))

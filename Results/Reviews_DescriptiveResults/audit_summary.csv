@@ -1,6 +1,6 @@
 metric,value
 row_count,17967
-column_count,8
+column_count,14
 book_count,217
 unique_text_count,17739
 exact_duplicate_record_count_beyond_first,0

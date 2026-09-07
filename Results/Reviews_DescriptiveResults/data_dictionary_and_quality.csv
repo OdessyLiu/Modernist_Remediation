@@ -1,8 +1,14 @@
 field,present_count,missing_count,missing_percent,unique_count,observed_types
 arousal,17967,0,0.0,8818,float:17967
+book_id,17967,0,0.0,217,int:17967
 id,17967,0,0.0,217,str:17967
 index,17967,0,0.0,17967,int:17967
+lang,17967,0,0.0,1,str:17967
 likes,17967,0,0.0,70,int:17967
+rating,17967,594,3.3060611120387375,11,NoneType:594; float:16446; int:927
+review_date,17967,0,0.0,4742,str:17967
+reviewer,17967,0,0.0,8761,str:17967
+reviewer_url,17967,0,0.0,12619,str:17967
 shelves,17967,0,0.0,4663,list:17967
 text,17967,0,0.0,17739,str:17967
 valence,17967,0,0.0,9258,float:17967

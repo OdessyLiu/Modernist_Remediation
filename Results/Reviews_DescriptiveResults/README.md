@@ -5,8 +5,8 @@ Unit of analysis: one review record. Dataset-internal text was treated only as d
 
 ## Dataset and data quality
 
-- 17,967 reviews across 217 unique book IDs (8 fields per record).
-- No missing values occur in the eight stored fields; all records share the expected schema.
+- 17,967 reviews across 217 unique book IDs (14 fields per record).
+- Missing values by stored field: index: 0; id: 0; book_id: 0; reviewer: 0; reviewer_url: 0; rating: 594; review_date: 0; text: 0; likes: 0; shelves: 0; word_count: 0; lang: 0; valence: 0; arousal: 0.
 - Index values are unique and span 0–32,438; they retain 14,472 gaps from the source indexing.
 - There are no exact duplicate full records. Exact text is repeated in 58 groups, representing 228 additional rows beyond the first; 47 groups span more than one book.
 - 10,425 reviews (58.0%) have no shelf labels. This is absence of optional shelf metadata, not a missing JSON field.
@@ -41,6 +41,21 @@ Most-reviewed books:
 | 22312041-vincent | 385 | 0.608 | 0.503 |
 | 35888383-photographic | 351 | 0.586 | 0.514 |
 | 25247938-the-fifth-beatle | 333 | 0.569 | 0.516 |
+
+### Shelf coverage
+
+Shelf labels are present on 7,542 reviews (42.0%); 10,425 (58.0%) have empty shelf lists. There are 15,884 stored assignments and 3,531 distinct labels. Among reviews with shelves, the mean number of labels is 2.11. Labels occur across 208 of 217 books.
+
+| Stored labels per review | Reviews | % of all reviews |
+|---:|---:|---:|
+| 0 | 10,425 | 58.0% |
+| 1 | 2,508 | 14.0% |
+| 2 | 1,726 | 9.6% |
+| 3 | 3,308 | 18.4% |
+
+Counts describe stored shelf metadata. An empty list does not establish that a reviewer never shelved the book. The observed maximum is not evidence of a platform limit. Labels are retained verbatim (for example, graphic-novel and graphic-novels remain separate); labels overlap, so percentages across labels are not additive.
+
+Additional tables: `shelf_coverage_summary.csv` (coverage, assignments, and rare labels), `shelves_per_review.csv` (label-count distribution), and `shelf_coverage_by_book.csv` (coverage within each book). In `shelf_summary.csv`, `review_percent` uses all reviews as the denominator and `percent_shelved_reviews` uses only reviews with at least one stored label.
 
 Most frequent shelves:
 
@@ -89,10 +104,10 @@ The five largest absolute review-level Spearman correlations are shown below. Th
 
 ## Requested additional dimensions
 
-Review metadata source: `/Users/odessialiu/Projects/Modernist_Remediation_ReMedia/Data/Reviews_Scraped/temp_all_reviews.json`  
-Book metadata source: `/Users/odessialiu/Projects/Modernist_Remediation_ReMedia/Data/Temp/temp_book_sheet.csv`
+Review metadata source: `/Users/odessialiu/Projects/Modernist_Remediation_ReMedia_public/Data/Reviews/AllReviews_217_VA.json`  
+Book metadata source: `/Users/odessialiu/Projects/Modernist_Remediation_ReMedia_public/Data/Goodreads_Comics_Data/Data_Files/Masterdata_ongoing_225.xlsx`
 
-The enrichment matched all 17,967 VA records. Matching used Goodreads book ID, exact text, likes, shelves, and word count; it did not assume that file order was stable. Reviewer profile URLs were converted to deterministic pseudonymous IDs, and names/URLs were not written to the results.
+All 17,967 reviews use ratings, reviewer URLs, and dates already present in the input JSON; no review-metadata join was performed. Reviewer profile URLs were converted to deterministic pseudonymous IDs for the reviewer outputs. Book publication metadata was matched by Goodreads ID.
 
 ### Star-rating distribution and textual valence
 

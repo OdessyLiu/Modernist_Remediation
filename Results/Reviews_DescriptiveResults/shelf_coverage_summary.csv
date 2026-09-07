@@ -1,0 +1,17 @@
+metric,value
+total_reviews,17967
+reviews_with_shelves,7542
+reviews_with_shelves_percent,41.97695775588579
+reviews_without_shelves,10425
+reviews_without_shelves_percent,58.02304224411421
+total_stored_shelf_assignments,15884
+unique_shelf_labels,3531
+mean_shelves_per_review,0.8840652307007291
+mean_shelves_per_shelved_review,2.106072659771944
+median_shelves_per_shelved_review,2.0
+maximum_stored_shelves_per_review,3
+books_with_shelved_reviews,208
+books_with_shelved_reviews_percent,95.85253456221199
+labels_used_in_one_review,2556
+labels_used_in_one_book,2599
+duplicate_assignments_within_reviews,0

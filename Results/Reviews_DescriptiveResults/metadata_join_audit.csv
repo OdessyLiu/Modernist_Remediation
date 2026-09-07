@@ -1,13 +1,4 @@
 metric,value
-va_review_count,17967
-source_review_count,17977
-source_reviews_with_text,17967
-matched_review_count,17967
-unmatched_va_review_count,0
-unused_source_reviews_with_text,0
-source_reviews_without_text,10
-source_reviews_with_unmapped_book_id,0
-duplicate_composite_key_groups,14
-rows_in_duplicate_composite_key_groups,31
-book_metadata_count,225
+review_metadata_mode,embedded_in_input_no_review_join
+input_review_count,17967
 va_books_with_metadata,217
