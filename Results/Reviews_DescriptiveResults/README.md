@@ -59,18 +59,20 @@ Additional tables: `shelf_coverage_summary.csv` (coverage, assignments, and rare
 
 Most frequent shelves:
 
-| Shelf | Reviews | Books |
-|---|---:|---:|
-| graphic-novels | 1,477 | 160 |
-| graphic-novel | 1,069 | 161 |
-| biography | 1,019 | 146 |
-| comics | 705 | 151 |
-| non-fiction | 525 | 121 |
-| history | 434 | 110 |
-| nonfiction | 368 | 106 |
-| art | 204 | 65 |
-| graphic | 147 | 70 |
-| adult | 144 | 74 |
+Review range is the number of distinct review records containing a label, expressed as a percentage of all 17,967 reviews. Book range is the number of distinct books with at least one such review, expressed as a percentage of all 217 books. Each label is counted at most once per review and once per book; these ranges measure dispersion, not minimum–maximum intervals.
+
+| Shelf | Reviews | Review range (%) | Books | Book range (%) |
+|---|---:|---:|---:|---:|
+| graphic-novels | 1,477 | 8.22% | 160 | 73.73% |
+| graphic-novel | 1,069 | 5.95% | 161 | 74.19% |
+| biography | 1,019 | 5.67% | 146 | 67.28% |
+| comics | 705 | 3.92% | 151 | 69.59% |
+| non-fiction | 525 | 2.92% | 121 | 55.76% |
+| history | 434 | 2.42% | 110 | 50.69% |
+| nonfiction | 368 | 2.05% | 106 | 48.85% |
+| art | 204 | 1.14% | 65 | 29.95% |
+| graphic | 147 | 0.82% | 70 | 32.26% |
+| adult | 144 | 0.80% | 74 | 34.10% |
 
 ## Numeric associations
 

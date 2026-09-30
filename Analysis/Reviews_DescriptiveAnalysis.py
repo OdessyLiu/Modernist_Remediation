@@ -1388,9 +1388,11 @@ def write_report(
         lines.append(f"| {size} | {count:,} | {100*count/n:.1f}% |")
     lines += ["", "Counts describe stored shelf metadata. An empty list does not establish that a reviewer never shelved the book. The observed maximum is not evidence of a platform limit. Labels are retained verbatim (for example, graphic-novel and graphic-novels remain separate); labels overlap, so percentages across labels are not additive.",
               "", "Additional tables: `shelf_coverage_summary.csv` (coverage, assignments, and rare labels), `shelves_per_review.csv` (label-count distribution), and `shelf_coverage_by_book.csv` (coverage within each book). In `shelf_summary.csv`, `review_percent` uses all reviews as the denominator and `percent_shelved_reviews` uses only reviews with at least one stored label.",
-              "", "Most frequent shelves:", "", "| Shelf | Reviews | Books |", "|---|---:|---:|"]
+              "", "Most frequent shelves:", "",
+              f"Review range is the number of distinct review records containing a label, expressed as a percentage of all {n:,} reviews. Book range is the number of distinct books with at least one such review, expressed as a percentage of all {len(book_rows):,} books. Each label is counted at most once per review and once per book; these ranges measure dispersion, not minimum–maximum intervals.",
+              "", "| Shelf | Reviews | Review range (%) | Books | Book range (%) |", "|---|---:|---:|---:|---:|"]
     for row in shelf_rows[:10]:
-        lines.append(f"| {row['shelf']} | {row['review_count']:,} | {row['book_count']:,} |")
+        lines.append(f"| {row['shelf']} | {row['review_count']:,} | {row['review_percent']:.2f}% | {row['book_count']:,} | {row['book_percent']:.2f}% |")
 
     lines += [
         "",

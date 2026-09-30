@@ -21,3 +21,7 @@ Analysis/Scraper/log/*
 Notes/
 chrome_user_data/
 
+Results/Keywords_Rating/*
+
+# Local Sketch Engine credential
+/API.md
